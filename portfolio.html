@@ -135,15 +135,15 @@
           <div class="flex flex-col justify-between gap-2 sm:flex-row">
             <div>
               <p class="text-xs font-bold uppercase text-zinc-500">Project 04</p>
-              <h3 class="mt-1 text-xl font-extrabold">당도 측정·마감·공유 전 과정 자동화</h3>
+              <h3 class="mt-1 text-xl font-extrabold">당도 측정·업무마감·공유 자동화</h3>
             </div>
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project04_sweetness_spreadsheet_manual.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
           </div>
           <div class="mt-5 grid gap-4 md:grid-cols-2">
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">당도 측정 대상 분류, 측정값 입력, 결과 공유, 누적 저장, Slack 공유 이력 확인이 여러 시트와 수기 단계로 분산되어 마감 누락과 휴먼에러 가능성이 있었습니다.</p></section>
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">시트 구성, 관리자/사원 사용 범위, 자동 공유 이력 관리 방식, Slack 봇 공유 흐름을 직접 기획·정리했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">RMS_DATA 붙여넣기 후 파괴·비파괴 측정 리스트를 생성하고, 측정값 입력 시 결과 리스트와 누적 시트가 자동 반영되도록 구성했습니다. 특이사항이 없으면 Slack 봇이 오후 4시 30분쯤 커머스에 자동 공유되도록 설계했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">RMS_DATA, 자동공유점검이력, 파괴·비파괴 시트, 측정값 입력시트, 공유용 결과리스트, 당도누적시트, 당도기준 시트까지 총 7개 운영 영역에 적용했습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">당도 측정 대상 분류, 측정값 입력, 결과 공유, 누적 저장, Slack 공유 이력 확인이 여러 시트와 수기 단계로 분산되어 마감 누락과 휴먼에러 가능성이 있었습니다. 특히 정해진 마감 시간에 담당자가 반복 확인해야 하는 구조라 업무 집중도가 떨어지고, 마감 처리에 평균 30분가량이 소요됐습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">시트 구성, 관리자/사원 사용 범위, 자동 공유 이력 관리 방식, Slack 봇 공유 흐름을 직접 기획·정리했습니다. 업무마감 웹앱과 리마인더 노출 조건을 설계해 정해진 시간에 마감 알림이 반복 표시되도록 운영 흐름을 재구성했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">RMS_DATA 붙여넣기 후 파괴·비파괴 측정 리스트를 생성하고, 측정값 입력 시 결과 리스트와 누적 시트가 자동 반영되도록 구성했습니다. 업무마감용 웹앱에서 마감 여부를 확인하고, 리마인더가 정해진 시간에 계속 표시되도록 설계해 담당자의 확인 누락을 줄였습니다. 특이사항이 없으면 Slack 봇이 오후 4시 30분쯤 커머스에 자동 공유되도록 연결했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">RMS_DATA, 자동공유점검이력, 파괴·비파괴 시트, 측정값 입력시트, 공유용 결과리스트, 당도누적시트, 당도기준 시트까지 총 7개 운영 영역에 적용했습니다. 리마인더 기반 마감 체크와 웹앱 자동화를 통해 업무마감 소요 시간을 30분에서 20분으로 줄여 약 33% 단축했습니다.</p></section>
           </div>
         </article>
 
@@ -151,6 +151,22 @@
           <div class="flex flex-col justify-between gap-2 sm:flex-row">
             <div>
               <p class="text-xs font-bold uppercase text-zinc-500">Project 05</p>
+              <h3 class="mt-1 text-xl font-extrabold">QR·웹앱 기반 업무 루틴 통합 관리</h3>
+            </div>
+            <span class="h-fit rounded-full bg-sky-100 px-3 py-1 text-xs font-bold text-sky-800">QR Code · Web App</span>
+          </div>
+          <div class="mt-5 grid gap-4 md:grid-cols-2">
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검교정, 불출대장 등 반복 관리 업무가 개별 문서와 접근 경로로 흩어져 있어 사원들이 업무 시작 전 필요한 양식과 관리 화면을 찾는 데 시간이 소요됐습니다. 현장 준비 단계에서 평균 10분가량이 소요되어 반복 업무의 체감 비효율이 컸습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">업무 루틴 효율화를 목표로 관리 대상 업무를 분류하고, 사원들이 하나의 진입점에서 필요한 기능에 접근할 수 있도록 QR 코드와 웹앱 기반 단일화 구조를 직접 기획했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검교정, 불출대장, 마감·점검 관련 대장류를 포함한 총 5가지 반복 업무를 하나의 QR 코드와 웹앱 화면으로 연결했습니다. 업무별 이동 경로를 줄이고, 사원이 현장에서 즉시 필요한 항목을 선택해 입력·확인할 수 있도록 운영 동선을 재설계했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">분산된 업무 준비 과정을 단일 QR 진입점으로 통합해 사원 업무 준비 시간을 약 10분에서 5분으로 줄였습니다. 준비 시간은 약 50% 단축됐고, 검교정과 불출대장 등 반복 관리 업무의 접근성과 누락 방지 효과를 개선했습니다.</p></section>
+          </div>
+        </article>
+
+        <article class="project rounded-xl border border-zinc-200 bg-white p-5">
+          <div class="flex flex-col justify-between gap-2 sm:flex-row">
+            <div>
+              <p class="text-xs font-bold uppercase text-zinc-500">Project 06</p>
               <h3 class="mt-1 text-xl font-extrabold">수박 당도 기준 11brix 상향 제안</h3>
             </div>
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project04_watermelon_brix_proposal.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
@@ -166,7 +182,7 @@
         <article class="project rounded-xl border border-zinc-200 bg-white p-5">
           <div class="flex flex-col justify-between gap-2 sm:flex-row">
             <div>
-              <p class="text-xs font-bold uppercase text-zinc-500">Project 06</p>
+              <p class="text-xs font-bold uppercase text-zinc-500">Project 07</p>
               <h3 class="mt-1 text-xl font-extrabold">사과 SKU별 최소당도 기준 설정 제안</h3>
             </div>
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project04_apple_min_brix_proposal.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
@@ -182,7 +198,7 @@
         <article class="project rounded-xl border border-zinc-200 bg-white p-5">
           <div class="flex flex-col justify-between gap-2 sm:flex-row">
             <div>
-              <p class="text-xs font-bold uppercase text-zinc-500">Project 07</p>
+              <p class="text-xs font-bold uppercase text-zinc-500">Project 08</p>
               <h3 class="mt-1 text-xl font-extrabold">QC 현장 업무 및 온보딩 가이드 구축</h3>
             </div>
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project05_inspection_guide_staff.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
@@ -206,3 +222,4 @@
   </main>
 </body>
 </html>
+
