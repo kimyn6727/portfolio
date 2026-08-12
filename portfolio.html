@@ -20,16 +20,31 @@
   </script>
   <style>
     * { letter-spacing: 0; }
-    body { font-family: Inter, Pretendard, ui-sans-serif, system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, Pretendard, ui-sans-serif, system-ui, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #eef4ff 48%, #f8fafc 100%); }
+    .page { border-radius: 26px; }
+    .hero-panel { background: linear-gradient(135deg, #f8fbff 0%, #ffffff 48%, #eef4ff 100%); }
+    .eyebrow { color: #075985; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .stat-card { border: 1px solid #cbd5e1; background: rgba(255,255,255,.86); border-radius: 14px; padding: 14px 16px; box-shadow: 0 8px 20px rgba(15,23,42,.04); }
+    .stat-card strong { display: block; color: #0f172a; font-size: 24px; line-height: 1.05; }
+    .stat-card span { display: block; margin-top: 5px; color: #475569; font-size: 12px; font-weight: 700; }
+    .capability-card { border: 1px solid #e2e8f0; border-radius: 16px; background: #fff; box-shadow: 0 8px 22px rgba(15,23,42,.04); }
+    .project { border-color: #dbe3ee !important; border-radius: 18px !important; box-shadow: 0 12px 28px rgba(15,23,42,.055); }
+    .project h3 { color: #0f172a; line-height: 1.35; }
+    .project section { border: 1px solid #e2e8f0; border-radius: 14px !important; background: #f8fafc !important; }
+    .project section:nth-child(3), .project section:nth-child(4) { border-color: #c7d2fe; background: #eef4ff !important; }
+    .project h4 { color: #0f172a; }
+    .project p { color: #475569 !important; }
+    a, button { transition: all .18s ease; }
     @media print {
       .no-print { display: none !important; }
       body { background: white !important; }
-      .page { margin: 0 !important; max-width: none !important; box-shadow: none !important; }
-      .project { break-inside: avoid; }
+      .page { margin: 0 !important; max-width: none !important; box-shadow: none !important; border-radius: 0 !important; }
+      .project { break-inside: avoid; box-shadow: none !important; }
     }
   </style>
 </head>
-<body class="bg-sky-50 text-slate-900">
+<body class="bg-slate-50 text-slate-900">
   <header class="no-print sticky top-0 z-20 border-b border-sky-100 bg-white/90 backdrop-blur">
     <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
       <a href="#top" class="text-sm font-bold">Kim Jeeun Portfolio</a>
@@ -40,49 +55,55 @@
     </nav>
   </header>
 
-  <main id="top" class="page mx-auto my-8 max-w-6xl overflow-hidden bg-white shadow-sm ring-1 ring-sky-100">
-    <section class="bg-gradient-to-r from-sky-50 via-white to-indigo-50 px-7 py-9 sm:px-10">
-      <p class="text-sm font-bold uppercase text-sky-700">Manufacturing QA/QC + E-commerce Fresh Food Quality</p>
+  <main id="top" class="page mx-auto my-8 max-w-6xl overflow-hidden bg-white shadow-xl shadow-slate-200/70 ring-1 ring-slate-200">
+    <section class="hero-panel px-7 py-10 sm:px-10">
+      <p class="eyebrow">Manufacturing QA/QC + E-commerce Fresh Food Quality</p>
       <div class="mt-4 grid gap-7 lg:grid-cols-[1fr_300px] lg:items-end">
         <div>
           <h1 class="max-w-3xl text-4xl font-extrabold leading-tight text-slate-950">김제은 포트폴리오</h1>
           <p class="mt-3 max-w-3xl text-lg font-semibold text-sky-900">식품 품질관리 · 운영개선 · 데이터 기반 QC 전문가</p>
           <p class="mt-5 max-w-3xl text-sm leading-7 text-zinc-700">
-            제조업 QA/QC와 이커머스 신선식품 품질관리 경험을 기반으로, 현장의 문제를 기준·문서·데이터·자동화 구조로 전환해 운영 효율과 품질 일관성을 높였습니다. VOC, 관능평가, 당도 데이터, 협력사별 편차를 연결해 품질 기준을 제안하고 실행 가능한 운영 체계로 정착시키는 데 강점이 있습니다.
+            제조업 QA/QC와 이커머스 신선식품 품질관리 경험을 바탕으로 품질 기준, 현장 문서, 데이터 자동화 체계를 구축했습니다. 반복 업무 시간을 줄이고 VOC·관능평가·당도 데이터를 기준 개선안으로 연결하는 품질 운영 역량을 보유하고 있습니다.
           </p>
         </div>
-        <aside class="rounded-xl border border-sky-100 bg-white/80 p-5">
+        <aside class="rounded-2xl border border-sky-100 bg-white/85 p-5 shadow-sm">
           <p class="text-sm font-bold">Contact</p>
           <p class="mt-3 text-sm text-zinc-600">Email. <a class="font-semibold text-sky-700" href="mailto:kimyn6727@naver.com" target="_blank" rel="noopener noreferrer">kimyn6727@naver.com</a></p>
           <p class="mt-1 text-sm text-zinc-600">Mobile. 010-3674-7328</p>
           <p class="mt-1 text-sm text-zinc-600">Location. Seoul, Korea</p>
         </aside>
       </div>
+      <div class="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="stat-card"><strong>33%</strong><span>업무마감 시간 단축</span></div>
+        <div class="stat-card"><strong>50%</strong><span>업무 준비 시간 단축</span></div>
+        <div class="stat-card"><strong>8</strong><span>핵심 프로젝트 정리</span></div>
+        <div class="stat-card"><strong>100K+</strong><span>주간 입고 unit 대응</span></div>
+      </div>
     </section>
 
     <section class="grid gap-4 border-y border-sky-100 px-7 py-7 sm:px-10 lg:grid-cols-3">
-      <div class="rounded-lg border border-zinc-200 p-5">
+      <div class="capability-card p-5">
         <h2 class="text-sm font-extrabold uppercase text-sky-700">Problem Solving</h2>
         <p class="mt-3 text-sm leading-6 text-zinc-700">반복되는 품질 이슈의 원인을 분석하고 현장 관점에서 실행 가능한 개선안을 도출합니다.</p>
       </div>
-      <div class="rounded-lg border border-zinc-200 p-5">
+      <div class="capability-card p-5">
         <h2 class="text-sm font-extrabold uppercase text-sky-700">Execution</h2>
         <p class="mt-3 text-sm leading-6 text-zinc-700">업무 비효율을 발견하고 SOP, 매뉴얼, 자동화, 기준 정립으로 운영 효율을 높입니다.</p>
       </div>
-      <div class="rounded-lg border border-zinc-200 p-5">
+      <div class="capability-card p-5">
         <h2 class="text-sm font-extrabold uppercase text-sky-700">Data Operation</h2>
         <p class="mt-3 text-sm leading-6 text-zinc-700">입고량, 품질 지표, 검사 결과, VOC, 경쟁사 기준, Slack 공유 이력을 기반으로 리스크와 개선 우선순위를 판단합니다.</p>
       </div>
     </section>
 
-    <section id="projects" class="bg-slate-50 px-7 py-9 sm:px-10">
+    <section id="projects" class="bg-slate-50/80 px-7 py-10 sm:px-10">
       <div class="mb-6">
         <p class="text-sm font-extrabold uppercase text-sky-700">Core Projects</p>
         <h2 class="mt-2 text-2xl font-extrabold text-slate-950">핵심 프로젝트</h2>
-        <p class="mt-2 text-sm text-zinc-600">각 프로젝트는 배경 및 문제, 담당 역할, 주요 실행, 결과 및 적용 범위 기준으로 재구성하고, 2-5번 프로젝트에는 원본 PPT 자료를 연결했습니다.</p>
+        <p class="mt-2 text-sm text-zinc-600">핵심 프로젝트는 문제, 역할, 실행, 성과를 중심으로 정리했습니다. 원본 PPT가 있는 항목은 버튼으로 연결했습니다.</p>
       </div>
 
-      <div class="space-y-5">
+      <div class="space-y-6">
         <article class="project rounded-xl border border-zinc-200 bg-white p-5">
           <div class="flex flex-col justify-between gap-2 sm:flex-row">
             <div>
@@ -92,10 +113,10 @@
             <span class="h-fit rounded-full bg-sky-100 px-3 py-1 text-xs font-bold text-sky-800">Google Sheets · Apps Script</span>
           </div>
           <div class="mt-5 grid gap-4 md:grid-cols-2">
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">입고 마감, 변질재고 마감, 당도측정 리스트 작성, 검품강화 보고서 작성이 반복 수기 업무로 분산되어 데이터 취합 지연과 입력 오류 가능성이 있었습니다.</p></section>
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">현장 업무 흐름을 분석하고 자동화 대상 업무를 선정한 뒤, 스프레드시트 구조와 자동화 로직을 직접 기획·제작·운영했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">Google Sheets와 Apps Script를 활용해 데이터 취합, 리스트 생성, 결과 반영, 누적 저장 흐름을 자동화했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">입고 마감, 변질재고 마감, 당도측정 리스트, 검품강화 보고서 등 다수 반복 업무에 적용해 수기 입력 오류를 줄이고 운영 효율을 개선했습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">입고 마감, 변질재고, 당도 리스트, 검품강화 보고서가 수기 업무로 분산되어 지연·오류 리스크가 있었습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">자동화 대상 업무를 선정하고 스프레드시트 구조와 Apps Script 로직을 직접 기획·제작했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">데이터 취합, 리스트 생성, 결과 반영, 누적 저장 흐름을 Google Sheets 기반으로 자동화했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">입고·재고·당도·검품강화 보고 업무에 적용해 반복 입력과 마감 오류 가능성을 줄였습니다.</p></section>
           </div>
         </article>
 
@@ -108,10 +129,10 @@
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project02_vernier_caliper_manual.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
           </div>
           <div class="mt-5 grid gap-4 md:grid-cols-2">
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">과일·채소 등 신선식품의 직경, 길이, 두께 측정 시 사원 간 측정 방식과 압력, 각도 차이로 측정 편차가 발생할 수 있었습니다.</p></section>
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">버니어 캘리퍼스 사용 목적, 적용 범위, 장비 구성, 외측 측정 방법, 측정값 판독법, 주의사항을 사원용 매뉴얼로 직접 정리했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">장비 상태 확인, 영점 확인, 외측용 죠 사용, 슬라이더 조정, 고정나사 고정, 어미자·아들자 판독 순서까지 단계별로 문서화했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">총 9장 구성의 버니어 캘리퍼스 매뉴얼로 제작했으며, 신선식품 검품 시 측정 장비 사용 표준과 사원 교육 자료로 활용 가능한 기준을 마련했습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">신선식품 치수 측정 시 검사자별 압력·각도 차이로 측정 편차가 발생할 수 있었습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">버니어 캘리퍼스 사용 목적, 판독법, 주의사항을 사원용 기준으로 정리했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">영점 확인, 외측 측정, 슬라이더 고정, 어미자·아들자 판독 순서를 단계별로 문서화했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">총 9장 매뉴얼로 제작해 신선식품 검품 장비 사용 표준과 교육 자료로 활용 가능하게 했습니다.</p></section>
           </div>
         </article>
 
@@ -124,10 +145,10 @@
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project03_mbo_cross_contamination.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
           </div>
           <div class="mt-5 grid gap-4 md:grid-cols-2">
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">24년도 완제품 미생물 기준 이탈 가능성이 높은 제품 중 불고기류가 다수 확인됐고, 작업도구·작업자 미생물 이탈이 교차오염 원인일 가능성이 있었습니다.</p></section>
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">품질경영팀 리더로 검증 계획 및 실행, 결과 분석을 담당하고 품질관리팀·생산팀과 개선 요청 및 재검증 흐름을 조율했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">핫니더실, 소스믹싱실, 템퍼링실, 차마커실, 오븐포장실 등 불고기류 공통 작업장과 교차오염 가능성이 높은 작업도구를 대상으로 검증 계획을 수립했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">최소 6회/년 이상 취약도구 모니터링이 가능한 관리 체계를 제안하고, 이탈구역 청소·재검증·도구 교체 요청까지 이어지는 개선 프로세스를 정립했습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">불고기류 완제품에서 미생물 기준 이탈 가능성이 확인되어 교차오염 원인 검증이 필요했습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검증 계획, 실행, 결과 분석을 담당하고 품질관리팀·생산팀과 개선 요청을 조율했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">불고기류 공통 작업장과 취약 작업도구를 대상으로 교차오염 검증 계획을 수립했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">최소 6회/년 모니터링 체계와 청소·재검증·도구 교체 요청 프로세스를 정립했습니다.</p></section>
           </div>
         </article>
 
@@ -140,10 +161,10 @@
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project04_sweetness_spreadsheet_manual.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
           </div>
           <div class="mt-5 grid gap-4 md:grid-cols-2">
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">당도 측정 대상 분류, 측정값 입력, 결과 공유, 누적 저장, Slack 공유 이력 확인이 여러 시트와 수기 단계로 분산되어 마감 누락과 휴먼에러 가능성이 있었습니다. 특히 정해진 마감 시간에 담당자가 반복 확인해야 하는 구조라 업무 집중도가 떨어지고, 마감 처리에 평균 30분가량이 소요됐습니다.</p></section>
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">시트 구성, 관리자/사원 사용 범위, 자동 공유 이력 관리 방식, Slack 봇 공유 흐름을 직접 기획·정리했습니다. 업무마감 웹앱과 리마인더 노출 조건을 설계해 정해진 시간에 마감 알림이 반복 표시되도록 운영 흐름을 재구성했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">RMS_DATA 붙여넣기 후 파괴·비파괴 측정 리스트를 생성하고, 측정값 입력 시 결과 리스트와 누적 시트가 자동 반영되도록 구성했습니다. 업무마감용 웹앱에서 마감 여부를 확인하고, 리마인더가 정해진 시간에 계속 표시되도록 설계해 담당자의 확인 누락을 줄였습니다. 특이사항이 없으면 Slack 봇이 오후 4시 30분쯤 커머스에 자동 공유되도록 연결했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">RMS_DATA, 자동공유점검이력, 파괴·비파괴 시트, 측정값 입력시트, 공유용 결과리스트, 당도누적시트, 당도기준 시트까지 총 7개 운영 영역에 적용했습니다. 리마인더 기반 마감 체크와 웹앱 자동화를 통해 업무마감 소요 시간을 30분에서 20분으로 줄여 약 33% 단축했습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">당도 측정·결과 공유·누적 저장이 여러 시트로 분산되어 마감 누락과 휴먼에러 가능성이 있었습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">시트 구조, Slack 봇 공유, 웹앱 마감 체크, 리마인더 노출 조건을 직접 기획했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">RMS_DATA 기반 리스트 생성, 측정값 반영, 누적 저장, 오후 4시 30분 Slack 자동 공유를 연결했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">총 7개 운영 영역에 적용했습니다. 리마인더·웹앱 기반 마감 체크로 소요 시간을 30분에서 20분으로 약 33% 단축했습니다.</p></section>
           </div>
         </article>
 
@@ -156,10 +177,10 @@
             <span class="h-fit rounded-full bg-sky-100 px-3 py-1 text-xs font-bold text-sky-800">QR Code · Web App</span>
           </div>
           <div class="mt-5 grid gap-4 md:grid-cols-2">
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검교정, 불출대장 등 반복 관리 업무가 개별 문서와 접근 경로로 흩어져 있어 사원들이 업무 시작 전 필요한 양식과 관리 화면을 찾는 데 시간이 소요됐습니다. 현장 준비 단계에서 평균 10분가량이 소요되어 반복 업무의 체감 비효율이 컸습니다.</p></section>
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">업무 루틴 효율화를 목표로 관리 대상 업무를 분류하고, 사원들이 하나의 진입점에서 필요한 기능에 접근할 수 있도록 QR 코드와 웹앱 기반 단일화 구조를 직접 기획했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검교정, 불출대장, 마감·점검 관련 대장류를 포함한 총 5가지 반복 업무를 하나의 QR 코드와 웹앱 화면으로 연결했습니다. 업무별 이동 경로를 줄이고, 사원이 현장에서 즉시 필요한 항목을 선택해 입력·확인할 수 있도록 운영 동선을 재설계했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">분산된 업무 준비 과정을 단일 QR 진입점으로 통합해 사원 업무 준비 시간을 약 10분에서 5분으로 줄였습니다. 준비 시간은 약 50% 단축됐고, 검교정과 불출대장 등 반복 관리 업무의 접근성과 누락 방지 효과를 개선했습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검교정, 불출대장 등 반복 관리 업무가 개별 문서로 흩어져 준비 시간이 길었습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">업무 5종을 분류하고 하나의 QR 코드와 웹앱으로 접근하는 단일 진입점을 기획했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검교정, 불출대장, 마감·점검 대장류를 웹앱 화면으로 연결해 현장 동선을 단순화했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">사원 업무 준비 시간을 약 10분에서 5분으로 줄여 약 50% 단축했습니다.</p></section>
           </div>
         </article>
 
@@ -172,10 +193,10 @@
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project04_watermelon_brix_proposal.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
           </div>
           <div class="mt-5 grid gap-4 md:grid-cols-2">
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">수박 VOC의 주요 원인이 관능으로 확인됐고, PB 수박의 판매 문구와 실제 관리 기준 차이로 소비자 오인 및 신뢰 저하 리스크가 있었습니다. 경쟁사인 곰곰, SSG, 오아시스는 11brix 기준을 운영하고 있어 기준 경쟁력 점검이 필요했습니다.</p></section>
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">VOC 인입 구조, 경쟁사 기준, 협력사별 당도 결과, 관능평가 데이터를 연결해 수박 당도 기준 상향의 타당성을 검토하고 품질 기준 개선안을 제안했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">2026.06.10-2026.07.06 기간 `[비표][선][박스]당도선별수박5kg이상` 외 4개 SKU를 대상으로 파괴검사와 5점 척도 관능평가를 병행했습니다. 11brix 미만/이상 구간의 단맛 만족도와 1점 평가 비율을 비교하고, 협력사별 평균 당도 결과를 함께 분석했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">11brix 이상 수박의 단맛 만족도는 3.33점으로 11brix 미만 2.69점 대비 +0.64점 높았고, 단맛 1점 평가 비율은 30.8%에서 14.9%로 감소했습니다. 이를 근거로 파괴 당도 기준을 10brix에서 11brix로 상향하고, 전체 수박 VOC 인입률 1.40%에서 1.12% 이하, 관능 VOC 비중 43.21%에서 35% 이하를 목표로 제안했습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">수박 VOC의 주요 원인이 관능으로 확인됐고, 경쟁사는 11brix 기준을 운영하고 있었습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">VOC, 경쟁사 기준, 협력사 당도, 관능평가 데이터를 연결해 기준 상향안을 제안했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">2026.06.10-2026.07.06 기간 수박 5개 SKU를 파괴검사와 5점 척도 관능평가로 분석했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">11brix 이상 단맛 만족도 3.33점, 1점 평가 비율 14.9%를 근거로 10brix에서 11brix 상향을 제안했습니다.</p></section>
           </div>
         </article>
 
@@ -188,10 +209,10 @@
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project04_apple_min_brix_proposal.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
           </div>
           <div class="mt-5 grid gap-4 md:grid-cols-2">
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">사과는 3주 연속 검품강화 품목으로 선정됐음에도 VOC 추세가 크게 개선되지 않았습니다. 평균 당도 기준만으로 관리할 경우 개체별 저당도 혼입을 놓칠 수 있어, 고객이 체감하는 맛 편차를 줄이기 위한 최소 기준 설계가 필요했습니다.</p></section>
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">VOC 유형, 반품 이력, SKU별 표시 당도, 개체별 측정값을 비교해 평균 중심 관리의 한계를 정의하고, SKU별 최소당도 기준을 데이터 기반으로 설정하는 개선안을 도출했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">13brix 상품과 14brix 상품의 개체별 당도 편차를 비교하고, 각 SKU의 기준 미달률을 산출했습니다. 단순 평균 통과 여부가 아니라 `-1σ` 이상을 SKU별 최소당도 기준으로 설정해 저당도 개체 혼입을 사전에 감지하는 관리 방식을 제안했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">13brix SKU는 25%, 14brix SKU는 33.7%의 개체별 기준 미달률이 확인되어 잠재적 맛 VOC 발생 가능성을 수치화했습니다. 제안 기준은 저장 원물 운영 기간과 특정 리스크 기간에 집중 적용해 품질 편차를 낮추고, 관능 VOC 기반 검품강화 대상 선정 시 보다 근본적인 개선안으로 활용할 수 있습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">사과는 3주 연속 검품강화에도 VOC 추세가 개선되지 않아 평균 당도 관리의 한계가 있었습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">VOC, 반품 이력, SKU별 표시 당도, 개체별 측정값을 비교해 최소 기준을 설계했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">13brix·14brix 상품의 개체별 편차를 분석하고 `-1σ` 이상을 최소당도 기준으로 제안했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">13brix SKU 25%, 14brix SKU 33.7% 기준 미달률을 근거로 개체별 저당도 혼입 리스크를 수치화했습니다.</p></section>
           </div>
         </article>
 
@@ -204,10 +225,10 @@
             <a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project05_inspection_guide_staff.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a>
           </div>
           <div class="mt-5 grid gap-4 md:grid-cols-2">
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검품 목적, 도구 준비, PDA 처리, 회송·기한폐기, Slack 공유 기준이 경험 중심으로 전달되어 신규 사원의 온보딩과 현장 판단에 편차가 발생할 수 있었습니다.</p></section>
-            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">QC 사원용 기본 업무가이드의 목차, 업무 흐름, 단계별 설명, 공유 양식, 참고사항을 직접 기획하고 문서화했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">업무 목적, 사원 업무 흐름도, 당일 업무 확인, 검품 준비, 입고/재고 검품, 재고변질 처리, 회송·기한폐기, PDA 사용법, Slack 채널별 공유 기준, QR코드를 하나의 가이드로 정리했습니다.</p></section>
-            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">총 30장 구성의 사원용 Inspection Guide로 제작했으며, 입고/재고 검품, 회송, 폐기, PDA 처리, Slack 공유, 기준서 접근까지 QC 현장 사원 업무 전반에 적용 가능한 표준 가이드를 구축했습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">배경 및 문제</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검품, PDA, 회송·폐기, Slack 공유 기준이 경험 중심으로 전달되어 온보딩 편차가 있었습니다.</p></section>
+            <section class="rounded-lg bg-zinc-50 p-4"><h4 class="text-sm font-extrabold">담당 역할</h4><p class="mt-2 text-sm leading-6 text-zinc-700">QC 사원용 기본 업무가이드의 목차, 업무 흐름, 공유 양식, 참고사항을 기획했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">주요 실행</h4><p class="mt-2 text-sm leading-6 text-zinc-700">검품 준비, 재고변질 처리, PDA 사용법, Slack 공유 기준, QR 접근 경로를 하나의 가이드로 정리했습니다.</p></section>
+            <section class="rounded-lg bg-sky-50 p-4"><h4 class="text-sm font-extrabold text-sky-800">결과 및 적용 범위</h4><p class="mt-2 text-sm leading-6 text-zinc-700">총 30장 Inspection Guide로 제작해 QC 현장 사원 업무 전반의 표준 교육 자료를 구축했습니다.</p></section>
           </div>
         </article>
       </div>
@@ -222,4 +243,5 @@
   </main>
 </body>
 </html>
+
 
