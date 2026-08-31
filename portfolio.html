@@ -3,149 +3,323 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>김제은 포트폴리오 | Quality & Operations Improvement</title>
+  <title>김제은 포트폴리오 | Quality Operations Casebook</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
   <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ["Inter", "Pretendard", "ui-sans-serif", "system-ui", "sans-serif"] } } } };
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: "#1f1b2e", muted: "#625b71", soft: "#f7f2ff", line: "#ded6ec", accent: "#6d3bbd" },
+          fontFamily: { sans: ["Inter", "Pretendard", "ui-sans-serif", "system-ui", "sans-serif"] }
+        }
+      }
+    };
   </script>
   <style>
     * { letter-spacing: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: Inter, Pretendard, ui-sans-serif, system-ui, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #eef4ff 48%, #f8fafc 100%); }
-    .page { border-radius: 26px; }
-    .hero-panel { background: linear-gradient(135deg, #f8fbff 0%, #ffffff 48%, #eef4ff 100%); }
-    .eyebrow { color: #075985; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-    .stat-card { border: 1px solid #cbd5e1; background: rgba(255,255,255,.86); border-radius: 14px; padding: 14px 16px; box-shadow: 0 8px 20px rgba(15,23,42,.04); }
-    .stat-card strong { display: block; color: #0f172a; font-size: 24px; line-height: 1.05; }
-    .stat-card span { display: block; margin-top: 5px; color: #475569; font-size: 12px; font-weight: 700; }
-    .process-step, .project-card, .mini-card { border: 1px solid #dbe3ee; border-radius: 18px; background: #fff; box-shadow: 0 12px 28px rgba(15,23,42,.055); }
-    .project-field { border: 1px solid #e2e8f0; border-radius: 14px; background: #f8fafc; padding: 14px; }
-    .project-field h4 { color: #075985; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-    .project-field p, .project-field li { color: #475569; font-size: 14px; line-height: 1.65; }
-    .tag { display: inline-flex; border-radius: 999px; border: 1px solid #cbd5e1; background: #f8fafc; padding: 5px 9px; font-size: 12px; font-weight: 700; color: #334155; }
-    .section-label { color: #075985; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-    a, button { transition: all .18s ease; }
-    @media print { .no-print { display: none !important; } body { background: white !important; } .page { margin: 0 !important; max-width: none !important; box-shadow: none !important; border-radius: 0 !important; } .project-card, .mini-card, .process-step { break-inside: avoid; box-shadow: none !important; } }
+    body {
+      font-family: Inter, Pretendard, ui-sans-serif, system-ui, sans-serif;
+      background: #f1edf8;
+      color: #172033;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .sheet { max-width: 1180px; margin: 0 auto; background: #fff; box-shadow: 0 22px 50px rgba(23, 32, 51, .08); }
+    .section { padding: 72px 40px; }
+    .cover {
+      position: relative;
+      min-height: 720px;
+      background: #aaa2ce;
+      overflow: hidden;
+      color: #fff;
+    }
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      pointer-events: none;
+    }
+    .cover-title {
+      position: absolute;
+      right: 0;
+      top: 43%;
+      width: min(540px, 78vw);
+      padding-right: 46px;
+    }
+    .cover-title h1 {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 40px;
+      line-height: 1;
+      font-weight: 800;
+      color: #fff;
+    }
+    .cover-title h1::after {
+      content: "";
+      height: 2px;
+      flex: 1;
+      background: rgba(255, 255, 255, .85);
+    }
+    .cover-title p {
+      margin-top: 12px;
+      color: rgba(255, 255, 255, .76);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .cover-contact {
+      margin-top: 28px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 13px;
+      line-height: 1.8;
+      font-weight: 600;
+    }
+    .toc-row {
+      display: grid;
+      grid-template-columns: 88px 1fr auto;
+      gap: 22px;
+      align-items: baseline;
+      border-top: 1px solid #ded6ec;
+      padding: 22px 0;
+    }
+    .toc-num { color: #6d3bbd; font-size: 13px; font-weight: 900; }
+    .toc-title { color: #1f1b2e; font-size: 21px; line-height: 1.45; font-weight: 900; }
+    .toc-desc { color: #625b71; font-size: 14px; line-height: 1.7; }
+    .hero-visual {
+      position: relative;
+      min-height: 680px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255, 255, 255, .75) 0 9%, transparent 24%),
+        linear-gradient(135deg, #aca3d0 0%, #b8abd8 48%, #ece5f6 100%);
+      color: #fff;
+    }
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -120px;
+      width: 560px;
+      height: 420px;
+      border-radius: 46% 54% 0 0;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, .45), rgba(255, 255, 255, .16)),
+        repeating-linear-gradient(90deg, rgba(109, 59, 189, .1) 0 2px, transparent 2px 24px);
+      opacity: .55;
+    }
+    .hero-visual > * { position: relative; z-index: 1; }
+    .hero-visual .eyebrow { color: #6d3bbd; }
+    .hero-visual .copy, .hero-visual .kpi span { color: #463b5d; }
+    .hero-visual .hero-title, .hero-visual .kpi strong { color: #1f1b2e; }
+    .hero-visual .text-accent { color: #57309a !important; }
+    .hero-visual aside { border-color: rgba(109, 59, 189, .28); background: rgba(255, 255, 255, .58); border-radius: 20px; padding: 22px; backdrop-filter: blur(8px); box-shadow: 0 18px 32px rgba(31, 27, 46, .08); }
+    .hero-visual aside .copy, .hero-visual aside p { color: #2f2942; }
+    .hero-visual aside a { color: #6d3bbd; }
+    .hero-visual .border-line { border-color: rgba(109, 59, 189, .22) !important; }
+    .hero-visual .kpi { border-color: #6d3bbd; }
+    .hero-visual .text-ink { color: #1f1b2e !important; }
+    .hairline { border-top: 1px solid #ded6ec; }
+    .eyebrow { color: #6d3bbd; font-size: 12px; font-weight: 900; text-transform: uppercase; }
+    .hero-title { max-width: 880px; font-size: 44px; line-height: 1.26; font-weight: 900; }
+    .copy { color: #566274; font-size: 15px; line-height: 1.85; }
+    .kpi { border-top: 2px solid #6d3bbd; padding-top: 14px; }
+    .kpi strong { display: block; font-size: 28px; line-height: 1.18; font-weight: 900; }
+    .kpi span { display: block; margin-top: 8px; color: #5b677a; font-size: 13px; line-height: 1.45; font-weight: 700; }
+    .case-shell { border: 1px solid #ded6ec; background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 14px 32px rgba(31, 27, 46, .06); }
+    .case-top { border-bottom: 1px solid #ded6ec; background: linear-gradient(135deg, #fbf8ff 0%, #ffffff 100%); }
+    .case-no { color: #6d3bbd; font-size: 12px; font-weight: 900; text-transform: uppercase; }
+    .case-title { font-size: 28px; line-height: 1.35; font-weight: 900; }
+    .statement { border-left: 4px solid #6d3bbd; background: #f7f2ff; border-radius: 18px; padding: 20px 22px; }
+    .statement p { font-size: 20px; line-height: 1.55; font-weight: 900; }
+    .work-block { border-top: 1px solid #e6ebf0; padding-top: 22px; }
+    .work-block h4 { font-size: 13px; font-weight: 900; color: #121826; }
+    .work-block p, .work-block li { color: #566274; font-size: 15px; line-height: 1.8; }
+    .btn { display: inline-flex; min-height: 38px; align-items: center; justify-content: center; border: 1px solid #6d3bbd; border-radius: 999px; padding: 9px 15px; color: #6d3bbd; background: #fff; font-size: 12px; font-weight: 900; transition: all .18s ease; white-space: nowrap; }
+    .btn:hover { background: #6d3bbd; color: #fff; transform: translateY(-1px); }
+    .cap { display: inline-flex; align-items: center; border: 1px solid #ded6ec; border-radius: 999px; padding: 6px 10px; background: #fbf8ff; color: #625b71; font-size: 12px; font-weight: 800; }
+    .support { border-top: 1px solid #ded6ec; padding-top: 24px; }
+    @media (max-width: 760px) {
+      .cover { min-height: 560px; }
+      .cover-title { left: 28px; right: 28px; top: 42%; width: auto; padding-right: 0; }
+      .cover-title h1 { font-size: 32px; }
+      .toc-row { grid-template-columns: 54px 1fr; gap: 14px; }
+      .toc-desc { grid-column: 2; }
+      .section { padding: 52px 22px; }
+      .hero-title { font-size: 32px; line-height: 1.34; }
+      .case-title { font-size: 23px; }
+      .statement p { font-size: 17px; }
+    }
+    @media print {
+      body { background: #fff !important; }
+      .no-print { display: none !important; }
+      .sheet { max-width: none !important; }
+      .cover { min-height: 520px !important; }
+      .section { padding: 36px 28px !important; }
+      .case-shell, .support { break-inside: avoid; }
+      a { color: #6d3bbd !important; text-decoration: none !important; }
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
-  <header class="no-print sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
-    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-      <a href="#top" class="text-sm font-bold">Kim Jeeun Portfolio</a>
-      <div class="flex gap-2">
-        <a href="index.html" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:border-sky-500 hover:text-sky-700" target="_blank" rel="noopener noreferrer">Resume</a>
-        <a href="#projects" class="rounded-md border border-sky-200 bg-sky-50 px-3 py-2 text-xs font-semibold text-sky-800">Projects</a>
-        <button onclick="window.print()" class="rounded-md bg-sky-700 px-3 py-2 text-xs font-semibold text-white hover:bg-sky-800" type="button">PDF 저장/인쇄</button>
+<body>
+  <header class="no-print sticky top-0 z-20 border-b border-line bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3 px-5 py-3">
+      <a href="#top" class="text-sm font-black text-ink">Kim Jeeun Portfolio</a>
+      <div class="flex flex-wrap gap-2">
+        <a class="btn" href="index.html" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a class="btn" href="#cases">Case Study</a>
+        <button class="btn" type="button" onclick="window.print()">PDF 저장/인쇄</button>
       </div>
     </nav>
   </header>
 
-  <main id="top" class="page mx-auto my-8 max-w-6xl overflow-hidden bg-white shadow-xl shadow-slate-200/70 ring-1 ring-slate-200">
-    <section class="hero-panel px-7 py-10 sm:px-10">
-      <p class="eyebrow">Quality × Data × Operations Improvement</p>
-      <div class="mt-4 grid gap-7 lg:grid-cols-[1fr_300px] lg:items-end">
-        <div>
-          <h1 class="max-w-3xl text-4xl font-extrabold leading-tight text-slate-950">Quality & Operations Improvement</h1>
-          <p class="mt-3 max-w-3xl text-lg font-semibold text-sky-900">현장에서 문제를 발견하고, 데이터로 검증하고, 기준과 시스템으로 해결합니다.</p>
-          <p class="mt-5 max-w-3xl text-sm leading-7 text-slate-700">제조 QA/QC와 이커머스 신선식품 품질관리 경험을 바탕으로 VOC·관능평가·측정 데이터를 품질 의사결정으로 연결하고, 반복적인 운영 업무를 자동화·표준화해 왔습니다.</p>
+  <main id="top" class="sheet">
+    <section class="cover">
+      <div class="cover-title">
+        <h1>PORTFOLIO</h1>
+        <p>Quality Operations Casebook</p>
+        <p>데이터 기반 판단과 운영 개선 경험을 정리한 포트폴리오</p>
+        <div class="cover-contact">
+          <p>김제은</p>
+          <p>kimyn6727@naver.com</p>
+          <p>010-****-****</p>
         </div>
-        <aside class="rounded-2xl border border-slate-200 bg-white/85 p-5 shadow-sm">
-          <p class="text-sm font-bold">Contact</p>
-          <p class="mt-3 text-sm text-slate-600">Email. <a class="font-semibold text-sky-700" href="mailto:kimyn6727@naver.com" target="_blank" rel="noopener noreferrer">kimyn6727@naver.com</a></p>
-          <p class="mt-1 text-sm text-slate-600">Mobile. 010-****-****</p>
-          <p class="mt-1 text-sm text-slate-600">Location. Seoul, Korea</p>
+      </div>
+    </section>
+
+    <section id="contents" class="section">
+      <p class="eyebrow">Contents</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight text-ink">목차</h2>
+      <div class="mt-10">
+        <a class="toc-row" href="#overview">
+          <span class="toc-num">01</span>
+          <span class="toc-title">Profile Summary</span>
+          <span class="toc-desc">데이터로 문제를 확인하고 기준과 프로세스로 바꾸는 강점</span>
+        </a>
+        <a class="toc-row" href="#case-quality">
+          <span class="toc-num">02</span>
+          <span class="toc-title">상품 품질기준 개선</span>
+          <span class="toc-desc">수박 11 Brix 상향 관리 · 사과 최소당도 관리기준</span>
+        </a>
+        <a class="toc-row" href="#case-pb">
+          <span class="toc-num">03</span>
+          <span class="toc-title">PB 간편과일 판매일수 재설정</span>
+          <span class="toc-desc">반복 품질저하 검증과 판매마감일수 1일 단축 제안</span>
+        </a>
+        <a class="toc-row" href="#case-ops">
+          <span class="toc-num">04</span>
+          <span class="toc-title">QC 반복 업무 자동화</span>
+          <span class="toc-desc">입력 · 누적 DB · 결과 생성 · Slack 공유 흐름 재설계</span>
+        </a>
+        <a class="toc-row" href="#supporting">
+          <span class="toc-num">05</span>
+          <span class="toc-title">Supporting Experience</span>
+          <span class="toc-desc">제조 QA, QR·Web App, 측정장비 표준화, Onboarding Guide</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="overview" class="section hero-visual">
+      <div class="grid gap-14 lg:grid-cols-[1fr_300px] lg:items-start">
+        <div>
+          <p class="eyebrow">Quality Operations Casebook</p>
+          <h1 class="hero-title mt-6">품질 문제를 데이터로 판단하고,<br />기준과 프로세스로 해결합니다.</h1>
+          <p class="mt-7 max-w-3xl text-lg font-black leading-8 text-accent">식품 품질 경력 5년+ · 제조 QA/QC → 이커머스 신선식품 Quality Operations</p>
+          <p class="copy mt-6 max-w-3xl">VOC, 입하, 회송, 당도, 관능평가, 측정 데이터를 보고 문제를 확인합니다. 확인한 문제는 품질기준과 관리방식으로 바꾸고, 반복되는 업무는 자동화와 표준화로 남깁니다.</p>
+        </div>
+        <aside class="border-t-2 border-ink pt-5 lg:mt-20">
+          <p class="text-sm font-black text-ink">Contact</p>
+          <p class="copy mt-4">Email. <a class="font-black text-accent" href="mailto:kimyn6727@naver.com" target="_blank" rel="noopener noreferrer">kimyn6727@naver.com</a></p>
+          <p class="copy">Mobile. 010-****-****</p>
+          <p class="copy">Location. Seoul, Korea</p>
         </aside>
       </div>
-      <div class="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="stat-card"><strong>33%</strong><span>업무마감 시간 단축</span></div>
-        <div class="stat-card"><strong>50%</strong><span>업무 준비 시간 단축</span></div>
-        <div class="stat-card"><strong>8</strong><span>핵심 프로젝트 정리</span></div>
-        <div class="stat-card"><strong>100K+</strong><span>주간 입고 unit 대응</span></div>
+
+      <div class="mt-16 grid gap-8 border-y border-line py-10 md:grid-cols-3">
+        <div><p class="text-lg font-black leading-7 text-ink">품질 문제를 숫자로 확인합니다.</p><p class="copy mt-3">VOC · 관능 · 측정 데이터를 보고 문제를 정의합니다.</p></div>
+        <div><p class="text-lg font-black leading-7 text-ink">확인한 문제를 기준으로 만듭니다.</p><p class="copy mt-3">분석 결과를 품질기준과 관리방식으로 연결합니다.</p></div>
+        <div><p class="text-lg font-black leading-7 text-ink">반복되는 일은 시스템으로 바꿉니다.</p><p class="copy mt-3">수기·분산 업무를 자동화하고 운영 기준으로 남깁니다.</p></div>
+      </div>
+
+      <dl class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="kpi"><strong>5년+</strong><span>Food Quality Experience</span></div>
+        <div class="kpi"><strong>200 SKU / 100K+</strong><span>Weekly Quality Operations</span></div>
+        <div class="kpi"><strong>33%</strong><span>업무 마감시간 단축</span></div>
+        <div class="kpi"><strong>50%</strong><span>업무 준비시간 단축</span></div>
+      </dl>
+    </section>
+
+    <section id="cases" class="section hairline">
+      <p class="eyebrow">Representative Case Studies</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight text-ink">대표 Case Study</h2>
+      <p class="copy mt-5 max-w-3xl">품질 판단, 기준화, 운영 자동화가 뚜렷하게 드러나는 세 가지 사례를 중심으로 정리했습니다.</p>
+
+      <div class="mt-10 space-y-12">
+        <article id="case-quality" class="case-shell">
+          <div class="case-top px-6 py-6 sm:px-8">
+            <div class="flex flex-col justify-between gap-5 lg:flex-row lg:items-start">
+              <div><p class="case-no">Case 01 · Product Quality Standards</p><h3 class="case-title mt-2">상품 품질기준 개선</h3><p class="copy mt-4 max-w-3xl">수박 당도 기준과 사과 최소당도 기준을 각각의 품질 판단 사례로 분리해 정리했습니다.</p></div>
+              <div class="flex flex-wrap gap-2"><a class="btn" href="portfolio_attachments/project04_watermelon_brix_proposal.pptx" target="_blank" rel="noopener noreferrer">수박 PPT</a><a class="btn" href="portfolio_attachments/project04_apple_min_brix_proposal.pptx" target="_blank" rel="noopener noreferrer">사과 PPT</a></div>
+            </div>
+          </div>
+          <div class="space-y-12 px-6 py-8 sm:px-8">
+            <section class="grid gap-8 lg:grid-cols-[300px_1fr]">
+              <div><p class="case-no">Watermelon</p><h4 class="mt-2 text-2xl font-black leading-tight text-ink">관능 VOC 해결을 위한 당도관리기준 11 Brix 상향 관리</h4><div class="mt-5 flex flex-wrap gap-2"><span class="cap">VOC</span><span class="cap">Sensory Test</span><span class="cap">Quality Standard</span></div></div>
+              <div>
+                <div class="statement"><p>관능 VOC 해결을 위해 당도관리기준을 11 Brix로 상향 관리하는 방안을 제안했습니다.</p></div>
+                <div class="mt-7 grid gap-6 lg:grid-cols-3">
+                  <div class="work-block"><h4>What I saw</h4><p class="mt-3">단맛 관련 VOC가 반복되고 있었습니다. 단순히 “맛이 약하다”로 끝내기보다, 고객이 낮은 만족도를 느끼는 조건을 확인해야 했습니다.</p></div>
+                  <div class="work-block"><h4>What I checked</h4><ul class="mt-3 list-disc pl-5"><li>판매, VOC, 당도 데이터를 함께 확인했습니다.</li><li>5개 SKU 파괴당도 측정과 5점 척도 관능평가를 진행했습니다.</li><li>경쟁사와 협력사 기준도 함께 비교했습니다.</li></ul></div>
+                  <div class="work-block"><h4>What I decided</h4><p class="mt-3">저당도 개체가 고객 만족도를 낮출 수 있다고 보고, 11 Brix 관리기준 파일럿을 제안했습니다.</p></div>
+                </div>
+              </div>
+            </section>
+            <section class="grid gap-8 border-t border-line pt-10 lg:grid-cols-[300px_1fr]">
+              <div><p class="case-no">Apple</p><h4 class="mt-2 text-2xl font-black leading-tight text-ink">사과 SKU별 최소당도 관리기준 설계</h4><div class="mt-5 flex flex-wrap gap-2"><span class="cap">Distribution</span><span class="cap">VOC</span><span class="cap">Quality Risk</span></div></div>
+              <div>
+                <div class="statement"><p>당도 평균 관리에서 최소값을 보증하는 관리법으로 바꿨습니다.</p></div>
+                <div class="mt-7 grid gap-6 lg:grid-cols-3">
+                  <div class="work-block"><h4>What I saw</h4><p class="mt-3">평균당도는 기준 안에 있어도 저당도 개체가 섞일 수 있었습니다. 평균만 보면 고객이 실제로 받는 편차를 설명하기 어려웠습니다.</p></div>
+                  <div class="work-block"><h4>What I checked</h4><ul class="mt-3 list-disc pl-5"><li>SKU별 측정값 분포와 표준편차를 확인했습니다.</li><li>표시 당도와 실제 측정값을 비교했습니다.</li><li>기준 미달 개체 비율을 산출했습니다.</li></ul></div>
+                  <div class="work-block"><h4>What I decided</h4><p class="mt-3">13 Brix SKU 25%, 14 Brix SKU 33.7% 기준 미달률을 근거로 SKU별 최소당도 관리기준을 제안했습니다.</p></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <article id="case-pb" class="case-shell">
+          <div class="case-top px-6 py-6 sm:px-8"><div class="flex flex-col justify-between gap-5 lg:flex-row lg:items-start"><div><p class="case-no">Case 02 · PB Product Quality Improvement</p><h3 class="case-title mt-2">간편과일 판매일수 재설정</h3><p class="copy mt-4 max-w-3xl">반복되는 품질저하를 확인하고, 판매 가능 기간을 그대로 둘 수 있는지 검증했습니다.</p></div><a class="btn" href="portfolio_attachments/project03_pb_fresh_cut_fruit_sales_days.pptx" target="_blank" rel="noopener noreferrer">PB 간편과일 PPT</a></div></div>
+          <div class="px-6 py-8 sm:px-8"><div class="statement"><p>반복되는 상품 품질저하를 검증해 판매일수 단축을 제안했습니다.</p></div><div class="mt-8 grid gap-6 lg:grid-cols-3"><div class="work-block"><h4>What I saw</h4><p class="mt-3">일부 PB 간편과일 SKU에서 변색, 상함, 드립, 맛 저하가 반복 확인되었습니다. 판매일수가 상품 상태 변화 속도와 맞는지 다시 봐야 했습니다.</p></div><div class="work-block"><h4>What I checked</h4><ul class="mt-3 list-disc pl-5"><li>상품별 품질 변화와 외관, 맛, 드립 이슈를 확인했습니다.</li><li>PB 상품과 Dole 상품의 품질 편차를 비교했습니다.</li><li>1차 확인 후 일부 상품은 재검으로 반복성을 다시 봤습니다.</li></ul></div><div class="work-block"><h4>What I decided</h4><p class="mt-3">품질 저하가 반복된 일부 SKU는 판매마감일수를 현행 대비 1일 단축해 시범 운영하고, 이후 VOC와 관능평가로 최종 판매일수를 확정하는 방식을 제안했습니다.</p></div></div></div>
+        </article>
+
+        <article id="case-ops" class="case-shell">
+          <div class="case-top px-6 py-6 sm:px-8"><div class="flex flex-col justify-between gap-5 lg:flex-row lg:items-start"><div><p class="case-no">Case 03 · Operations Process Improvement</p><h3 class="case-title mt-2">QC 반복 업무 자동화</h3><p class="copy mt-4 max-w-3xl">여러 파일과 Slack 공유로 흩어져 있던 업무를 하나의 데이터 흐름으로 다시 만들었습니다.</p></div><a class="btn" href="portfolio_attachments/project04_sweetness_spreadsheet_manual.pptx" target="_blank" rel="noopener noreferrer">자동화 PPT</a></div></div>
+          <div class="px-6 py-8 sm:px-8"><div class="statement"><p>분산된 QC 업무를 하나의 데이터 흐름으로 재설계해 마감시간을 33% 줄였습니다.</p></div><div class="mt-8 grid gap-6 lg:grid-cols-3"><div class="work-block"><h4>What I saw</h4><p class="mt-3">입고마감, 변질재고, 당도측정, 검품강화 보고가 각각 따로 움직였습니다. 같은 내용을 여러 파일에 다시 입력하고 Slack에 다시 공유하는 과정이 반복되고 있었습니다.</p></div><div class="work-block"><h4>What I checked</h4><p class="mt-3">업무를 파일 단위가 아니라 입력, 누적 DB, 결과 생성, Slack 공유의 흐름으로 나눠 봤습니다. 반복 입력과 공유 지연이 생기는 지점을 확인했습니다.</p></div><div class="work-block"><h4>What I decided</h4><p class="mt-3">Google Sheets, Apps Script, Slack을 연결해 입력부터 공유까지 이어지도록 만들었습니다. 총 7개 운영영역에 적용했고, 업무 마감시간은 30분에서 20분으로 약 33% 줄었습니다.</p></div></div></div>
+        </article>
       </div>
     </section>
 
-    <section class="border-y border-slate-200 px-7 py-9 sm:px-10">
-      <p class="section-label">How I Solve Problems</p>
-      <h2 class="mt-2 text-2xl font-extrabold text-slate-950">문제를 기준과 시스템으로 바꾸는 방식</h2>
-      <div class="mt-6 grid gap-3 md:grid-cols-5">
-        <div class="process-step p-4"><p class="text-sm font-extrabold text-sky-700">01 Define</p><p class="mt-2 text-sm leading-6 text-slate-600">현장과 고객 VOC에서 반복 문제와 이상징후를 발견합니다.</p></div>
-        <div class="process-step p-4"><p class="text-sm font-extrabold text-sky-700">02 Analyze</p><p class="mt-2 text-sm leading-6 text-slate-600">측정값, VOC, 관능평가, 판매·입하 데이터를 구조화합니다.</p></div>
-        <div class="process-step p-4"><p class="text-sm font-extrabold text-sky-700">03 Decide</p><p class="mt-2 text-sm leading-6 text-slate-600">분석 결과로 품질 기준과 관리 우선순위를 설정합니다.</p></div>
-        <div class="process-step p-4"><p class="text-sm font-extrabold text-sky-700">04 Improve</p><p class="mt-2 text-sm leading-6 text-slate-600">SOP, 기준서, 프로세스 개선 또는 자동화로 적용합니다.</p></div>
-        <div class="process-step p-4"><p class="text-sm font-extrabold text-sky-700">05 Standardize</p><p class="mt-2 text-sm leading-6 text-slate-600">개인 경험을 데이터와 시스템 기반 운영체계로 전환합니다.</p></div>
+    <section id="supporting" class="section hairline">
+      <p class="eyebrow">Supporting Experience</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight text-ink">경험의 폭을 보여주는 실행 사례</h2>
+      <div class="mt-10 grid gap-x-10 gap-y-8 md:grid-cols-2">
+        <article class="support"><div class="flex flex-col justify-between gap-3 sm:flex-row"><h3 class="text-xl font-black leading-7 text-ink">제조 QA · 교차오염 리스크 검증</h3><a class="btn" href="portfolio_attachments/project03_mbo_cross_contamination.pptx" target="_blank" rel="noopener noreferrer">PPT</a></div><p class="copy mt-4">완제품 미생물 리스크 가능성을 공정과 도구 사용 흐름에서 다시 확인했습니다. 공통 작업장과 취약 도구를 선정하고, RCA와 CAPA 관점으로 모니터링 체계를 잡았습니다.</p><div class="mt-4 flex flex-wrap gap-2"><span class="cap">Manufacturing QA</span><span class="cap">RCA</span><span class="cap">CAPA</span></div></article>
+        <article class="support"><h3 class="text-xl font-black leading-7 text-ink">QR·Web App 기반 QC 업무 루틴 통합</h3><p class="copy mt-4">검교정, 불출대장 등 5개 반복 업무를 하나의 QR과 Web App 진입점으로 묶었습니다. 업무 준비시간은 약 10분에서 5분으로 줄었습니다.</p><div class="mt-4 flex flex-wrap gap-2"><span class="cap">QR</span><span class="cap">Web App</span><span class="cap">50% Time Saving</span></div></article>
+        <article class="support"><div class="flex flex-col justify-between gap-3 sm:flex-row"><h3 class="text-xl font-black leading-7 text-ink">검품 기준 및 측정장비 운영 표준화</h3><a class="btn" href="portfolio_attachments/project02_vernier_caliper_manual.pptx" target="_blank" rel="noopener noreferrer">PPT</a></div><p class="copy mt-4">검사자별 측정 차이를 줄이기 위해 버니어 캘리퍼스 영점확인, 측정방법, 판독기준과 주의사항을 9장 매뉴얼로 정리했습니다.</p><div class="mt-4 flex flex-wrap gap-2"><span class="cap">Inspection Criteria</span><span class="cap">Equipment Standard</span></div></article>
+        <article class="support"><div class="flex flex-col justify-between gap-3 sm:flex-row"><h3 class="text-xl font-black leading-7 text-ink">QC 현장 업무 및 Onboarding Guide 구축</h3><a class="btn" href="portfolio_attachments/project05_inspection_guide_staff.pptx" target="_blank" rel="noopener noreferrer">PPT</a></div><p class="copy mt-4">검품, PDA, 회송, 폐기, Slack 공유 등 경험 중심으로 전달되던 업무를 30장 Inspection Guide로 구조화했습니다.</p><div class="mt-4 flex flex-wrap gap-2"><span class="cap">Onboarding</span><span class="cap">SOP</span><span class="cap">Guide</span></div></article>
       </div>
     </section>
 
-    <section id="projects" class="bg-slate-50/80 px-7 py-10 sm:px-10">
-      <div class="mb-7">
-        <p class="section-label">Selected Projects</p>
-        <h2 class="mt-2 text-2xl font-extrabold text-slate-950">핵심 프로젝트</h2>
-      </div>
-
-      <div class="space-y-8">
-        <section>
-          <p class="section-label">Quality Strategy</p>
-          <div class="mt-4 space-y-5">
-            <article class="project-card p-5">
-              <div class="flex flex-col justify-between gap-3 sm:flex-row"><div><p class="text-xs font-bold uppercase text-slate-500">Project 01</p><h3 class="mt-1 text-xl font-extrabold">수박 당도 기준 11 Brix 상향 제안</h3><div class="mt-3 flex flex-wrap gap-2"><span class="tag">VOC</span><span class="tag">Sensory Test</span><span class="tag">Quality Standard</span></div></div><a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project04_watermelon_brix_proposal.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a></div>
-              <div class="mt-5 grid gap-4 md:grid-cols-2"><div class="project-field"><h4>Problem</h4><p class="mt-2">고객 안내 기준과 실제 품질 편차가 존재했고, 관능 관련 VOC가 지속 발생했습니다.</p></div><div class="project-field"><h4>Hypothesis</h4><p class="mt-2">저당도 개체 혼입이 단맛 만족도와 VOC 발생에 영향을 줄 가능성이 있다고 판단했습니다.</p></div><div class="project-field"><h4>Analysis</h4><ul class="mt-2 list-disc pl-5"><li>VOC·판매 데이터 검토</li><li>경쟁사 기준 비교</li><li>협력사별 당도 데이터 확인</li><li>5개 SKU 파괴당도 측정 및 5점 척도 관능평가</li></ul></div><div class="project-field"><h4>Decision / Impact</h4><p class="mt-2">11 Brix 기준 적용 파일럿을 제안했습니다. 단맛 만족도와 저평가 비율 차이를 수치화해 데이터 기반 품질기준 개선안을 제시했습니다.</p></div></div>
-            </article>
-
-            <article class="project-card p-5">
-              <div class="flex flex-col justify-between gap-3 sm:flex-row"><div><p class="text-xs font-bold uppercase text-slate-500">Project 02</p><h3 class="mt-1 text-xl font-extrabold">사과 SKU별 최소당도 관리기준 설계</h3><div class="mt-3 flex flex-wrap gap-2"><span class="tag">Distribution Analysis</span><span class="tag">VOC</span><span class="tag">Quality Risk</span></div></div><a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project04_apple_min_brix_proposal.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a></div>
-              <div class="mt-5 grid gap-4 md:grid-cols-2"><div class="project-field"><h4>Problem</h4><p class="mt-2">평균당도 기준을 충족해도 동일 SKU 내 저당도 개체 혼입을 설명하기 어려웠습니다.</p></div><div class="project-field"><h4>Hypothesis</h4><p class="mt-2">평균값보다 개체별 분포와 최소 수준을 함께 관리하면 리스크를 더 효과적으로 관리할 수 있다고 판단했습니다.</p></div><div class="project-field"><h4>Analysis</h4><ul class="mt-2 list-disc pl-5"><li>VOC 및 반품 이력 분석</li><li>SKU별 표시 당도 비교</li><li>평균·표준편차 기반 품질편차 분석</li><li>기준 미달 개체 비율 산출</li></ul></div><div class="project-field"><h4>Decision / Impact</h4><p class="mt-2">SKU별 최소당도 관리기준을 제안했습니다. 13 Brix SKU 25%, 14 Brix SKU 33.7% 기준 미달률로 저당도 혼입 리스크를 가시화했습니다.</p></div></div>
-            </article>
-
-            <article class="project-card p-5">
-              <div class="flex flex-col justify-between gap-3 sm:flex-row"><div><p class="text-xs font-bold uppercase text-slate-500">Project 03</p><h3 class="mt-1 text-xl font-extrabold">PB 간편과일 판매일수 재설정 제안</h3><div class="mt-3 flex flex-wrap gap-2"><span class="tag">Product Quality</span><span class="tag">Shelf-life</span><span class="tag">Benchmarking</span></div></div><a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project03_pb_fresh_cut_fruit_sales_days.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a></div>
-              <div class="mt-5 grid gap-4 md:grid-cols-2"><div class="project-field"><h4>Problem</h4><p class="mt-2">일부 PB 간편과일 SKU에서 변색, 상함, 드립, 맛 저하 등 품질 저하 이슈가 반복 확인되어 판매 가능 기간의 적정성 검증이 필요했습니다.</p></div><div class="project-field"><h4>Hypothesis</h4><p class="mt-2">상품별 품질 변화 속도와 경쟁상품 대비 품질 편차를 확인하면 SKU별 판매일수 조정 필요 여부를 판단할 수 있다고 보았습니다.</p></div><div class="project-field"><h4>Analysis</h4><ul class="mt-2 list-disc pl-5"><li>1차 테스트에서 사과류 변색·상함 평가 비율 확인</li><li>파인애플류 드립, 맛, 외관 이슈 재검 진행</li><li>2차 테스트에서 PB 브랜드 상품의 맛·육안검품 이슈 재확인</li><li>Dole 브랜드와 자사 PB 파인애플 간편과일 품질 편차 비교</li></ul></div><div class="project-field"><h4>Decision / Impact</h4><p class="mt-2">품질 저하가 반복 확인된 일부 PB 간편과일 SKU에 대해 판매마감일수를 현행 대비 1일 단축해 시범 운영하고, VOC 및 관능 모니터링으로 최종 판매일수를 확정하는 방안을 제안했습니다.</p></div></div>
-            </article>
-          </div>
-        </section>
-
-        <section>
-          <p class="section-label">Operations Improvement</p>
-          <div class="mt-4 space-y-5">
-            <article class="project-card p-5">
-              <div class="flex flex-col justify-between gap-3 sm:flex-row"><div><p class="text-xs font-bold uppercase text-slate-500">Project 04</p><h3 class="mt-1 text-xl font-extrabold">QC 반복 업무 자동화 및 품질 데이터 운영체계 구축</h3><div class="mt-3 flex flex-wrap gap-2"><span class="tag">Google Sheets</span><span class="tag">Apps Script</span><span class="tag">Slack</span></div></div><a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project04_sweetness_spreadsheet_manual.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a></div>
-              <div class="mt-5 grid gap-4 md:grid-cols-2"><div class="project-field"><h4>Problem</h4><p class="mt-2">입고 마감, 변질재고, 당도측정, 검품강화 보고가 분산되어 반복입력, 누락, 마감 지연 가능성이 있었습니다.</p></div><div class="project-field"><h4>Approach</h4><p class="mt-2">개별 업무가 아니라 데이터 입력 → 결과 생성 → 누적 → 공유 전체 흐름을 하나의 운영 프로세스로 재설계했습니다.</p></div><div class="project-field"><h4>Action</h4><ul class="mt-2 list-disc pl-5"><li>RMS 기반 대상 리스트 생성</li><li>측정결과 자동 반영 및 누적 DB 구축</li><li>공유용 결과 자동 생성</li><li>Slack 자동공유와 마감 체크 로직 구성</li></ul></div><div class="project-field"><h4>Impact</h4><p class="mt-2">총 7개 운영영역에 적용했습니다. 업무 마감 소요시간을 30분에서 20분으로 약 33% 단축했습니다.</p></div></div>
-              <div class="mt-4 grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 md:grid-cols-[1fr_auto_1fr]"><div><p class="text-xs font-extrabold text-slate-500">AS-IS</p><p class="mt-1 text-sm text-slate-700">수기 입력 · 파일 분산 · 공유 누락 가능</p></div><div class="hidden items-center text-slate-400 md:flex">→</div><div><p class="text-xs font-extrabold text-sky-700">TO-BE</p><p class="mt-1 text-sm text-slate-700">자동 생성 · 누적 DB · Slack 공유 · 마감 체크</p></div></div>
-            </article>
-
-            <article class="project-card p-5">
-              <div><p class="text-xs font-bold uppercase text-slate-500">Project 05</p><h3 class="mt-1 text-xl font-extrabold">QR·Web App 기반 QC 업무 루틴 통합</h3><div class="mt-3 flex flex-wrap gap-2"><span class="tag">Web App</span><span class="tag">QR</span><span class="tag">Process Improvement</span></div></div>
-              <div class="mt-5 grid gap-4 md:grid-cols-2"><div class="project-field"><h4>Problem</h4><p class="mt-2">검교정, 장비 불출, 점검·마감대장이 개별 문서로 분산되어 매번 접근 시간이 발생했습니다.</p></div><div class="project-field"><h4>Approach</h4><p class="mt-2">문서별 개선보다 반복 업무 접근 자체를 하나의 진입점으로 통합했습니다.</p></div><div class="project-field"><h4>Action</h4><ul class="mt-2 list-disc pl-5"><li>5개 반복 업무 분류</li><li>단일 QR 진입점 구축</li><li>Web App 화면에서 업무 선택</li><li>기록 및 마감 흐름 단순화</li></ul></div><div class="project-field"><h4>Impact</h4><p class="mt-2">업무 준비시간을 약 10분에서 5분으로 50% 단축하고 접근성과 사용 편의성을 개선했습니다.</p></div></div>
-            </article>
-          </div>
-        </section>
-
-        <section>
-          <p class="section-label">Manufacturing QA</p>
-          <article class="mt-4 project-card p-5">
-            <div class="flex flex-col justify-between gap-3 sm:flex-row"><div><p class="text-xs font-bold uppercase text-slate-500">Project 06</p><h3 class="mt-1 text-xl font-extrabold">작업도구·청소도구 교차오염 리스크 검증</h3><div class="mt-3 flex flex-wrap gap-2"><span class="tag">RCA</span><span class="tag">Microbiology</span><span class="tag">CAPA</span></div></div><a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project03_mbo_cross_contamination.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a></div>
-            <div class="mt-5 grid gap-4 md:grid-cols-2"><div class="project-field"><h4>Problem</h4><p class="mt-2">완제품 미생물 리스크 가능성이 확인되어 공정 내 교차오염 검증이 필요했습니다.</p></div><div class="project-field"><h4>Analysis & Action</h4><ul class="mt-2 list-disc pl-5"><li>공통 작업장 및 취약 작업도구 선정</li><li>교차오염 검증계획 수립</li><li>미생물 결과 비교</li><li>생산팀 및 품질팀과 원인 검토</li></ul></div><div class="project-field md:col-span-2"><h4>Impact</h4><p class="mt-2">단발성 검사에 그치지 않고 최소 연 6회 모니터링 체계와 이상발생 시 후속조치 프로세스를 구축했습니다.</p></div></div>
-          </article>
-        </section>
-
-        <section>
-          <p class="section-label">Standardization · Additional Projects</p>
-          <div class="mt-4 grid gap-4 md:grid-cols-2">
-            <article class="mini-card p-5"><div class="flex flex-col justify-between gap-3 sm:flex-row"><div><p class="text-xs font-bold uppercase text-slate-500">Project 07</p><h3 class="mt-1 text-lg font-extrabold">검품 기준 및 측정장비 운영 표준화</h3></div><a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project02_vernier_caliper_manual.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a></div><p class="mt-4 text-sm leading-7 text-slate-700">검사자별 측정방법 차이로 발생할 수 있는 편차를 줄이기 위해 버니어 캘리퍼스의 영점확인, 측정방법, 판독기준과 주의사항을 표준화했습니다.</p><p class="mt-2 text-sm font-semibold text-sky-800">총 9장 매뉴얼 제작 · 측정 재현성과 교육 일관성 강화</p></article>
-            <article class="mini-card p-5"><div class="flex flex-col justify-between gap-3 sm:flex-row"><div><p class="text-xs font-bold uppercase text-slate-500">Project 08</p><h3 class="mt-1 text-lg font-extrabold">QC 현장 업무 및 Onboarding Guide 구축</h3></div><a class="h-fit rounded-full bg-indigo-100 px-3 py-1 text-xs font-bold text-indigo-800 hover:bg-indigo-200" href="portfolio_attachments/project05_inspection_guide_staff.pptx" target="_blank" rel="noopener noreferrer">첨부 PPT 보기</a></div><p class="mt-4 text-sm leading-7 text-slate-700">검품·PDA·회송·폐기·Slack 공유 등 경험 중심으로 전달되던 QC 업무를 하나의 흐름으로 구조화했습니다.</p><p class="mt-2 text-sm font-semibold text-sky-800">총 30장 Inspection Guide 제작 · 신규 인력 교육 표준화 기반 구축</p></article>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <footer class="px-7 py-8 sm:px-10">
-      <div class="rounded-2xl bg-slate-900 p-6 text-white">
-        <p class="text-sm font-bold uppercase text-sky-200">What I Can Contribute</p>
-        <div class="mt-3 space-y-3 text-sm leading-7 text-slate-100"><p>저의 강점은 단순히 품질 문제를 발견하는 데 있지 않습니다.</p><p>현장에서 발생한 문제를 데이터로 구조화하고, 원인을 검증하여 실행 가능한 기준과 프로세스로 전환하는 것이 제가 가장 잘하는 일입니다.</p><p>품질 데이터가 의사결정으로 이어지고, 반복 업무가 시스템으로 전환되며, 개인의 경험이 조직의 기준으로 남는 Quality Operations를 만들고자 합니다.</p></div>
-      </div>
+    <footer class="section hairline">
+      <p class="max-w-3xl text-3xl font-black leading-tight text-ink">데이터로 문제를 읽고, 실행 가능한 기준과 운영 시스템으로 연결하는 실무자입니다.</p>
+      <div class="mt-6 flex flex-wrap gap-2"><span class="cap">데이터 기반 판단</span><span class="cap">운영 개선</span><span class="cap">자동화·표준화</span></div>
+      <p class="mt-10 text-xs text-muted">© Kim Jeeun Portfolio</p>
     </footer>
   </main>
 </body>
