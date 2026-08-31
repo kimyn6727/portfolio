@@ -1,175 +1,50 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>김제은 이력서 | Quality & Operations Improvement</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ["Inter", "Pretendard", "ui-sans-serif", "system-ui", "sans-serif"] }
-        }
-      }
-    };
-  </script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>김제은 이력서 | Quality Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <style>
-    * { letter-spacing: 0; }
-    body { font-family: Inter, Pretendard, ui-sans-serif, system-ui, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #eef4ff 48%, #f8fafc 100%); }
-    .page { border-radius: 24px; }
-    .section-title { border-bottom: 1px solid #cbd5e1; padding-bottom: 8px; color: #075985; font-size: 12px; font-weight: 800; text-transform: uppercase; }
-    .resume-card { border: 1px solid #e2e8f0; border-radius: 16px; background: #fff; padding: 18px; box-shadow: 0 8px 22px rgba(15,23,42,.04); }
-    .metric { border: 1px solid #cbd5e1; border-radius: 14px; background: #f8fafc; padding: 14px; }
-    .metric dt { color: #075985; font-size: 22px; line-height: 1.05; font-weight: 800; }
-    .metric dd { margin-top: 4px; color: #475569; font-size: 12px; line-height: 1.35; }
-    .profile-photo { width: 112px; height: 144px; object-fit: cover; border-radius: 18px; border: 1px solid #cbd5e1; box-shadow: 0 14px 30px rgba(15,23,42,.12); background: #fff; }
-    .pill { display: inline-flex; align-items: center; border-radius: 999px; border: 1px solid #cbd5e1; background: #f8fafc; padding: 6px 10px; font-size: 12px; font-weight: 700; color: #334155; }
-    a, button { transition: all .18s ease; }
-    @media print {
-      body { background: white !important; }
-      .no-print { display: none !important; }
-      .page { box-shadow: none !important; margin: 0 !important; max-width: none !important; border-radius: 0 !important; }
-      .break-inside-avoid { break-inside: avoid; }
-      .resume-card, .metric, .profile-photo { box-shadow: none !important; }
-    }
+    :root{--ink:#1f1b2e;--text:#3f394e;--muted:#726b80;--accent:#6d3bbd;--soft:#f7f2ff;--line:#ded6ec}
+    *{box-sizing:border-box}body{margin:0;background:#eeeaf4;color:var(--text);font-family:Inter,Pretendard,sans-serif;word-break:keep-all}a{color:inherit}
+    .toolbar{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:12px max(20px,calc((100vw - 210mm)/2));border-bottom:1px solid var(--line);background:#fffffff2;backdrop-filter:blur(12px)}
+    .toolbar strong{color:var(--ink);font-size:13px}.actions{display:flex;gap:8px}.btn{border:1px solid var(--accent);border-radius:999px;padding:9px 14px;background:#fff;color:var(--accent);font:800 12px inherit;text-decoration:none;cursor:pointer}.btn.primary{background:var(--accent);color:#fff}
+    .paper{width:210mm;min-height:297mm;margin:28px auto 48px;padding:17mm 16mm 16mm;background:#fff;box-shadow:0 22px 50px #1f1b2e1f}
+    header{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:end;padding-bottom:22px;border-bottom:2px solid var(--ink)}
+    .eyebrow{margin:0;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}h1{margin:8px 0 0;color:var(--ink);font-size:38px;line-height:1;font-weight:900}.role{margin:10px 0 0;color:var(--ink);font-size:17px;font-weight:800}.headline{max-width:510px;margin:9px 0 0;color:var(--muted);font-size:12px;line-height:1.65;font-weight:600}
+    .profile-wrap{display:flex;align-items:flex-end;gap:14px}.profile-photo{width:25mm;height:32mm;object-fit:cover;object-position:center 22%;border:1px solid var(--line);background:var(--soft);box-shadow:0 8px 18px #1f1b2e18}address{color:var(--muted);font-size:10.5px;line-height:1.8;text-align:right;font-style:normal}address a{color:var(--accent);font-weight:800;text-decoration:none}
+    .impact{display:grid;grid-template-columns:repeat(5,1fr);margin-top:20px;border:1px solid var(--line);background:var(--soft)}.impact div{padding:13px 12px;border-right:1px solid var(--line)}.impact div:last-child{border:0}.impact strong{display:block;color:var(--ink);font-size:18px;font-weight:900}.impact span{display:block;margin-top:5px;color:var(--muted);font-size:8.5px;font-weight:700}
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 50mm;gap:11mm;margin-top:24px}.section{margin-top:22px}.section:first-child{margin-top:0}.title{display:flex;align-items:center;gap:10px;margin:0 0 12px;color:var(--ink);font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.title:after{content:"";height:1px;flex:1;background:var(--line)}
+    .summary{margin:0;font-size:11px;line-height:1.75}.summary strong{color:var(--ink)}.job{position:relative;padding:0 0 17px 15px;border-left:1px solid var(--line)}.job:last-child{padding-bottom:0}.job:before{content:"";position:absolute;left:-3.5px;top:4px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+    .job-head{display:flex;justify-content:space-between;gap:12px}.job h3{margin:0;color:var(--ink);font-size:12px;font-weight:900}.job time{flex:none;color:var(--accent);font-size:9px;font-weight:800}.scope{margin:4px 0 0;color:var(--muted);font-size:9.5px;line-height:1.55}ul{margin:7px 0 0;padding-left:15px}li{margin-top:3px;font-size:10px;line-height:1.55}li::marker{color:var(--accent)}
+    .side{padding-top:14px;border-top:2px solid var(--ink)}.side+.side{margin-top:21px}.side h2{margin:0 0 11px;color:var(--ink);font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.item+.item{margin-top:10px}.item h3{margin:0;color:var(--ink);font-size:10px;font-weight:900}.item p{margin:3px 0 0;color:var(--muted);font-size:9px;line-height:1.55}.tags{display:flex;flex-wrap:wrap;gap:5px}.tag{border:1px solid var(--line);border-radius:999px;padding:4px 7px;background:var(--soft);color:#5f398f;font-size:8px;font-weight:800}
+    .portfolio{margin-top:21px;padding:15px 14px;background:linear-gradient(135deg,#6d3bbd,#533092);color:#fff;box-shadow:0 10px 22px #6d3bbd2b}.portfolio .label{display:block;color:#e9dcff;font-size:7.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.portfolio strong{display:block;margin-top:5px;color:#fff;font-size:12px;line-height:1.35}.portfolio p{margin:6px 0 0;color:#eee7f8;font-size:8.5px;line-height:1.55}.portfolio a{display:inline-flex;margin-top:10px;border:1px solid #ffffff80;border-radius:999px;padding:6px 9px;background:#fff;color:var(--accent);font-size:8px;font-weight:900;text-decoration:none}
+    @media(max-width:860px){.paper{width:calc(100% - 24px);min-height:0;margin:12px auto;padding:28px 22px}header,.layout{grid-template-columns:1fr}.profile-wrap{align-items:center;justify-content:space-between}address{text-align:left}.impact{grid-template-columns:repeat(2,1fr)}.toolbar{padding:10px 14px}}
+    @page{size:A4;margin:0}@media print{body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}.no-print{display:none}.paper{width:210mm;min-height:297mm;margin:0;padding:17mm 16mm 16mm;box-shadow:none}.job,.side,.impact{break-inside:avoid}}
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
-  <div class="no-print sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
-      <p class="text-sm font-semibold text-slate-600">Resume</p>
-      <div class="flex gap-2">
-        <a href="portfolio.html" class="rounded-md border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:border-sky-500 hover:text-sky-700" target="_blank" rel="noopener noreferrer">Portfolio</a>
-        <button onclick="window.print()" class="rounded-md bg-sky-700 px-3 py-2 text-xs font-semibold text-white hover:bg-sky-800" type="button">PDF 저장/인쇄</button>
-      </div>
-    </div>
-  </div>
-
-  <main class="page mx-auto my-8 max-w-5xl overflow-hidden bg-white px-8 py-9 shadow-xl shadow-slate-200/70 ring-1 ring-slate-200 sm:px-10">
-    <header class="-mx-8 -mt-9 border-b border-slate-200 bg-gradient-to-r from-slate-50 via-white to-blue-50 px-8 pb-8 pt-9 sm:-mx-10 sm:px-10">
-      <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-        <div class="max-w-2xl">
-          <p class="text-xs font-extrabold uppercase text-sky-700">Quality × Data × Operations Improvement</p>
-          <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-slate-950">김제은</h1>
-          <p class="mt-2 text-xl font-extrabold text-slate-900">Quality & Operations Improvement</p>
-          <p class="mt-3 text-sm leading-6 text-slate-600">현장에서 문제를 발견하고, 데이터로 검증하고, 기준과 시스템으로 해결합니다.</p>
-        </div>
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-end md:text-right">
-          <img class="profile-photo" src="profile.jpg" alt="김제은 프로필 사진" />
-          <div class="text-sm leading-6 text-slate-600">
-            <p>Email. <a class="font-semibold text-sky-700" href="mailto:kimyn6727@naver.com" target="_blank" rel="noopener noreferrer">kimyn6727@naver.com</a></p>
-            <p>Mobile. 010-****-****</p>
-            <p>Location. Seoul, Korea</p>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="mt-7 break-inside-avoid">
-      <h2 class="section-title">Key Impact</h2>
-      <dl class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
-        <div class="metric"><dt>5년+</dt><dd>Food Quality Experience</dd></div>
-        <div class="metric"><dt>200 SKU</dt><dd>Weekly Quality Operations</dd></div>
-        <div class="metric"><dt>100K+</dt><dd>Weekly Inbound Volume</dd></div>
-        <div class="metric"><dt>33% ↓</dt><dd>Closing Time</dd></div>
-        <div class="metric"><dt>50% ↓</dt><dd>Preparation Time</dd></div>
-        <div class="metric"><dt>Q×D×A</dt><dd>Core Competency</dd></div>
-      </dl>
-    </section>
-
-    <section class="mt-7 grid gap-7 md:grid-cols-[1fr_290px]">
-      <div class="space-y-7">
-        <section class="break-inside-avoid">
-          <h2 class="section-title">Profile</h2>
-          <div class="mt-3 space-y-3 text-sm leading-7 text-slate-700">
-            <p>식품 품질관리 경력 5년+의 Quality Operations 실무자입니다.</p>
-            <p>제조 QA/QC부터 이커머스 신선식품 품질관리까지 경험하며 제품·공정·입고·재고·VOC로 이어지는 품질 흐름을 이해하고 있습니다.</p>
-            <p>특히 VOC·관능평가·측정 데이터를 품질 기준 개선으로 연결하고, 반복적인 운영 업무를 Excel·Power Query·Google Sheets·Apps Script 기반으로 자동화·표준화하는 것에 강점이 있습니다.</p>
-            <p>현장에서 발견한 문제를 단순 조치에 그치지 않고 데이터로 검증하고, 실행 가능한 기준과 프로세스로 전환하는 방식으로 업무를 수행합니다.</p>
-          </div>
-        </section>
-
-        <section class="break-inside-avoid">
-          <h2 class="section-title">Professional Experience</h2>
-          <div class="mt-4 space-y-4">
-            <article class="resume-card">
-              <div class="flex flex-col justify-between gap-1 sm:flex-row">
-                <h3 class="text-base font-extrabold">컬리 | 품질관리 스탭</h3>
-                <p class="text-sm font-semibold text-slate-500">2025.07 - Present</p>
-              </div>
-              <p class="mt-2 text-sm leading-6 text-slate-700">국산과일 카테고리를 중심으로 신선식품 Quality Operations 및 데이터 기반 품질개선 업무를 담당하고 있습니다.</p>
-              <div class="mt-4 grid gap-4 md:grid-cols-2">
-                <div><h4 class="text-sm font-extrabold text-sky-800">Quality Operations</h4><ul class="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-slate-700"><li>주간 약 200 SKU / 90,000~100,000+ unit 규모 입고·재고 품질 운영</li><li>국산과일 입고검품, 재고품질, 검품강화, 인증상품 리스크 관리</li><li>RMS·WMS 기반 입하 및 품질이력 확인과 현장 이슈 대응</li></ul></div>
-                <div><h4 class="text-sm font-extrabold text-sky-800">Quality Improvement</h4><ul class="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-slate-700"><li>VOC·당도·관능평가 기반 수박 기준 상향안 제안</li><li>SKU별 측정값 분포 기반 사과 최소당도 관리기준 설계</li><li>상품별 품질편차와 고객 VOC를 연결한 품질 리스크 분석</li></ul></div>
-                <div><h4 class="text-sm font-extrabold text-sky-800">Operations Improvement</h4><ul class="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-slate-700"><li>Google Sheets·Apps Script 기반 입고마감, 변질재고, 당도측정, 검품강화 보고 자동화</li><li>측정 → 누적DB → 결과 생성 → Slack 공유 품질 데이터 운영 흐름 구축</li><li>업무 마감시간 30분 → 20분, 약 33% 단축</li><li>QR·Web App 기반 반복 업무 통합으로 준비시간 10분 → 5분, 약 50% 단축</li></ul></div>
-                <div><h4 class="text-sm font-extrabold text-sky-800">Standardization</h4><ul class="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-slate-700"><li>검품기준서, SOP, 업무 매뉴얼 및 측정장비 관리기준 구축</li><li>Inspection Guide 및 교육체계 정리로 현장 판단 편차 축소</li></ul></div>
-              </div>
-            </article>
-
-            <article class="resume-card">
-              <div class="flex flex-col justify-between gap-1 sm:flex-row"><h3 class="text-base font-extrabold">에쓰푸드 음성공장 | 품질보증</h3><p class="text-sm font-semibold text-slate-500">2023.08 - 2025.06</p></div>
-              <p class="mt-2 text-sm leading-6 text-slate-700">Microbiology, Shelf-life Validation, HACCP, Root Cause Analysis, CAPA 중심의 제조 QA 업무를 수행했습니다. RT-PCR, API, ATP, SWAB, LIMS 기반 검사와 교차오염 검증 프로젝트를 담당했습니다.</p>
-            </article>
-
-            <article class="resume-card">
-              <div class="flex flex-col justify-between gap-1 sm:flex-row"><h3 class="text-base font-extrabold">케이터링서비스파트너 | 품질관리</h3><p class="text-sm font-semibold text-slate-500">2023.03 - 2023.07</p></div>
-              <p class="mt-2 text-sm leading-6 text-slate-700">HACCP 기준서 운영, Label Review, 공인기관 검사 관리, 이물·클레임 Root Cause Analysis 및 작업자 위생교육을 수행했습니다.</p>
-            </article>
-
-            <article class="resume-card">
-              <div class="flex flex-col justify-between gap-1 sm:flex-row"><h3 class="text-base font-extrabold">지앤에프 음성공장 | 품질관리</h3><p class="text-sm font-semibold text-slate-500">2020.01 - 2022.04</p></div>
-              <p class="mt-2 text-sm leading-6 text-slate-700">원부재료 입고 검사, COA 검토, 완제품 출고 검사, Physicochemical Analysis, 병원성 미생물 분석을 수행하고 원료 변경 이슈를 조기 발견해 클레임을 예방했습니다.</p>
-            </article>
-          </div>
-        </section>
-      </div>
-
-      <aside class="space-y-6">
-        <section class="break-inside-avoid">
-          <h2 class="section-title">Skills</h2>
-          <div class="mt-3 space-y-4 text-sm leading-6 text-slate-700">
-            <div><h3 class="font-extrabold text-slate-950">Quality Strategy</h3><p>VOC Analysis · Sensory Evaluation · Quality Standard Design · Root Cause Analysis · CAPA</p></div>
-            <div><h3 class="font-extrabold text-slate-950">Quality Assurance</h3><p>HACCP · GMP · GAP · Microbial Test · Physicochemical Analysis · Shelf-life Validation · Label Review</p></div>
-            <div><h3 class="font-extrabold text-slate-950">Data & Automation</h3><p>Excel · Power Query · Google Sheets · Google Apps Script · Slack Automation</p></div>
-            <div><h3 class="font-extrabold text-slate-950">Operations</h3><p>RMS · WMS · LIMS · Inbound QC · Inventory QC · SOP · Inspection Criteria · Supplier Communication</p></div>
-          </div>
-        </section>
-
-        <section class="break-inside-avoid">
-          <h2 class="section-title">Certifications</h2>
-          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm leading-6 text-slate-700"><li>식품기사</li><li>위생사</li><li>컴퓨터활용능력 1급</li></ul>
-        </section>
-
-        <section class="break-inside-avoid">
-          <h2 class="section-title">Education</h2>
-          <div class="mt-3 space-y-4 text-sm leading-6 text-slate-700">
-            <div><h3 class="font-bold text-slate-900">삼육대학교</h3><p>동물생명자원학과 / 식품영양학과 복수전공 · 학사</p><p class="text-slate-500">2015.03 - 2019.08 · 졸업</p></div>
-            <div><h3 class="font-bold text-slate-900">진명여자고등학교</h3><p class="text-slate-500">2010.03 - 2013.02 · 졸업</p></div>
-          </div>
-        </section>
-      </aside>
-    </section>
-
-    <section class="mt-8 break-inside-avoid rounded-2xl border border-slate-200 bg-slate-50 p-6">
-      <h2 class="section-title">What I Can Contribute</h2>
-      <div class="mt-4 space-y-3 text-sm leading-7 text-slate-700">
-        <p>현장 품질 경험을 바탕으로 고객 VOC와 품질 데이터를 연결해 문제의 원인을 구조화하고, 이를 실행 가능한 품질 기준과 운영 프로세스로 전환할 수 있습니다.</p>
-        <p>반복적인 품질 업무는 데이터화·자동화하고, 개인의 경험에 의존하는 업무는 SOP와 기준으로 표준화하는 것이 저의 강점입니다.</p>
-        <p>앞으로도 상품 품질과 운영 데이터를 연결하여 조직의 품질 경쟁력과 운영 효율을 동시에 개선하는 역할을 수행하고자 합니다.</p>
-      </div>
-    </section>
-
-    <section class="mt-6 break-inside-avoid rounded-2xl border border-sky-100 bg-gradient-to-r from-sky-50 via-white to-blue-50 p-5 shadow-sm">
-      <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-        <div><h2 class="text-sm font-extrabold uppercase text-sky-700">Portfolio</h2><p class="mt-2 text-sm leading-6 text-slate-700">주요 프로젝트, 자동화 사례, 품질 기준 개선 제안서는 아래 포트폴리오에서 확인하실 수 있습니다.</p><p class="mt-1 break-all text-sm font-semibold text-sky-800">https://kimyn6727.github.io/portfolio/portfolio.html</p></div>
-        <a class="inline-flex h-fit items-center justify-center rounded-md bg-sky-700 px-4 py-2 text-sm font-bold text-white hover:bg-sky-800" href="https://kimyn6727.github.io/portfolio/portfolio.html" target="_blank" rel="noopener noreferrer">포트폴리오 보기</a>
-      </div>
-    </section>
+<body>
+  <nav class="toolbar no-print"><strong>Kim Jeeun · Resume</strong><div class="actions"><a class="btn" href="portfolio_v2.html" target="_blank">포트폴리오</a><button class="btn primary" onclick="window.print()">PDF 저장 / 인쇄</button></div></nav>
+  <main class="paper">
+    <header><div><p class="eyebrow">Quality · Data · Operations</p><h1>김제은</h1><p class="role">Quality Operations Specialist</p><p class="headline">식품 품질 문제를 데이터로 검증하고, 실행 가능한 기준과 운영 프로세스로 전환합니다.</p></div><div class="profile-wrap"><img class="profile-photo" src="profile.jpg" alt="김제은 프로필 사진"><address><div><a href="mailto:kimyn6727@naver.com">kimyn6727@naver.com</a></div><div>010-****-****</div><div>Seoul, Korea</div></address></div></header>
+    <section class="impact"><div><strong>5년+</strong><span>식품 품질 경력</span></div><div><strong>200 SKU</strong><span>주간 품질 운영</span></div><div><strong>100K+</strong><span>주간 입고 물량</span></div><div><strong>33% ↓</strong><span>업무 마감시간</span></div><div><strong>50% ↓</strong><span>업무 준비시간</span></div></section>
+    <div class="layout"><div>
+      <section class="section"><h2 class="title">Profile</h2><p class="summary"><strong>제조 QA/QC부터 이커머스 신선식품 품질관리까지 경험한 실무자</strong>입니다. VOC·관능평가·측정 데이터를 품질 기준 개선으로 연결하고, 반복 업무는 Excel·Power Query·Google Sheets·Apps Script로 자동화·표준화합니다.</p></section>
+      <section class="section"><h2 class="title">Professional Experience</h2>
+        <article class="job"><div class="job-head"><h3>컬리 · 품질관리 스탭</h3><time>2025.07 — Present</time></div><p class="scope">국산과일 중심 신선식품 Quality Operations 및 품질 개선</p><ul><li>주간 약 200 SKU, 90,000~100,000+ unit 입고·재고 품질 운영</li><li>VOC·당도·관능평가 분석으로 수박 11 Brix 상향 및 사과 최소당도 기준 제안</li><li>Google Sheets·Apps Script·Slack 자동화로 마감시간 30분 → 20분 단축</li><li>QR·Web App으로 5개 반복 업무를 통합해 준비시간 10분 → 5분 단축</li><li>검품기준서·SOP·Inspection Guide 구축으로 현장 판단 기준 표준화</li></ul></article>
+        <article class="job"><div class="job-head"><h3>에쓰푸드 음성공장 · 품질보증</h3><time>2023.08 — 2025.06</time></div><p class="scope">미생물·유통기한·HACCP 기반 제조 QA</p><ul><li>RT-PCR·API·ATP·SWAB·LIMS 기반 검사 및 품질 이력 관리</li><li>공정·도구별 교차오염 리스크 검증, RCA와 CAPA 기반 개선 체계 운영</li></ul></article>
+        <article class="job"><div class="job-head"><h3>케이터링서비스파트너 · 품질관리</h3><time>2023.03 — 2023.07</time></div><ul><li>HACCP 기준서·표시사항 검토·공인기관 검사·이물 및 클레임 원인분석</li><li>작업자 위생교육과 현장 개선조치 운영</li></ul></article>
+        <article class="job"><div class="job-head"><h3>지앤에프 음성공장 · 품질관리</h3><time>2020.01 — 2022.04</time></div><ul><li>원부재료 입고·COA 검토, 완제품 출고 및 이화학·병원성 미생물 검사</li><li>원료 변경 이슈를 조기 발견해 제품 클레임 예방</li></ul></article>
+      </section>
+    </div><aside>
+      <section class="side"><h2>Core Skills</h2><div class="item"><h3>Quality Strategy</h3><p>VOC Analysis · Sensory Evaluation · Quality Standard Design · RCA · CAPA</p></div><div class="item"><h3>Quality Assurance</h3><p>HACCP · GMP · GAP · Microbial Test · Shelf-life Validation · Label Review</p></div><div class="item"><h3>Data & Automation</h3><p>Excel · Power Query · Google Sheets · Apps Script · Slack Automation</p></div><div class="item"><h3>Operations</h3><p>RMS · WMS · LIMS · Inbound/Inventory QC · SOP</p></div></section>
+      <section class="side"><h2>Strengths</h2><div class="tags"><span class="tag">데이터 기반 판단</span><span class="tag">품질 기준 설계</span><span class="tag">운영 개선</span><span class="tag">자동화</span><span class="tag">표준화</span></div></section>
+      <section class="side"><h2>Certifications</h2><div class="tags"><span class="tag">식품기사</span><span class="tag">위생사</span><span class="tag">컴퓨터활용능력 1급</span></div></section>
+      <section class="side"><h2>Education</h2><div class="item"><h3>삼육대학교 · 학사</h3><p>동물생명자원학과 / 식품영양학과 복수전공</p><p>2015.03 — 2019.08</p></div><div class="item"><h3>진명여자고등학교</h3><p>2010.03 — 2013.02</p></div></section>
+      <section class="portfolio"><span class="label">Selected Case Studies</span><strong>성과를 만든 과정이 궁금하다면</strong><p>품질 기준 개선과 운영 자동화의 문제 정의·검증·실행 과정을 포트폴리오에 담았습니다.</p><a href="portfolio_v2.html" target="_blank" rel="noopener noreferrer">포트폴리오 확인하기 →</a></section>
+    </aside></div>
   </main>
 </body>
 </html>
