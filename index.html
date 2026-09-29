@@ -277,14 +277,48 @@
       letter-spacing: 0;
     }
 
+    .section-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-lead {
+      margin: 8px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.7;
+    }
+
+    .desc.subtle {
+      margin-top: 8px;
+      color: #8a8295;
+      font-size: 12px;
+    }
+
     .about-section .section-title,
     .impact-section .section-title {
-      margin-bottom: 32px;
+      margin-bottom: 0;
     }
 
     .about-stack {
       display: grid;
       gap: 0;
+    }
+
+    .about-stack.concise .about {
+      padding-bottom: 36px;
+    }
+
+    .about-stack.concise .about + .about {
+      padding-top: 36px;
+    }
+
+    .about-stack.concise .about p {
+      max-width: 780px;
     }
 
     .about {
@@ -336,28 +370,69 @@
 
     .experience-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0;
       border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      border-left: 1px solid var(--line);
     }
 
     .experience-item {
-      padding: 22px 20px;
+      min-height: 210px;
+      padding: 26px 28px;
       border-right: 1px solid var(--line);
-    }
-
-    .experience-item:last-child {
-      border-right: 0;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
     }
 
     .experience-item h3,
     .capability-group h3,
     .credential-group h3 {
-      margin: 0;
+      margin: 6px 0 0;
       color: var(--ink);
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.35;
+    }
+
+    .experience-role {
+      display: block;
+      margin-top: 5px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .experience-focus {
+      display: inline-flex;
+      margin-top: 12px;
+      color: var(--accent-dark);
+      font-size: 11px;
+      line-height: 1.3;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .experience-points {
+      display: grid;
+      gap: 7px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .experience-points li {
+      position: relative;
+      padding-left: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .experience-points li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--accent-dark);
+      font-weight: 900;
     }
 
     .item-title {
@@ -398,11 +473,60 @@
 
     .capabilities {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 14px;
     }
 
-    .capability-group ul,
+    .capability-group {
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr);
+      gap: 14px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(109, 59, 189, 0.12);
+    }
+
+    .capability-group:last-of-type {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .capability-no {
+      color: var(--accent-dark);
+      font: 800 12px/1.4 "Inter", sans-serif;
+    }
+
+    .capability-group h3 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .capability-group p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.65;
+    }
+
+    .tools-row {
+      margin-top: 18px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+    }
+
+    .tools-row strong {
+      display: block;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tools-row p {
+      margin: 7px 0 0;
+      color: var(--accent-dark);
+      font-size: 12px;
+      line-height: 1.65;
+      font-weight: 700;
+    }
+
     .credential-group ul {
       display: grid;
       gap: 8px;
@@ -411,7 +535,6 @@
       list-style: none;
     }
 
-    .capability-group li,
     .credential-group li {
       color: var(--accent-dark);
       font-size: 13px;
@@ -490,15 +613,7 @@
       }
 
       .experience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .experience-item:nth-child(2n) {
-        border-right: 0;
-      }
-
-      .experience-item:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--line);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .capability-layout,
@@ -559,6 +674,14 @@
         font-size: 21px;
       }
 
+      .section-heading-row {
+        margin-bottom: 20px;
+      }
+
+      .section-lead {
+        font-size: 13px;
+      }
+
       .kpis {
         grid-template-columns: 1fr;
       }
@@ -575,17 +698,16 @@
         font-size: 22px;
       }
 
-      .experience-grid,
-      .capabilities {
+      .experience-grid {
         grid-template-columns: 1fr;
       }
 
       .experience-item {
-        border-right: 0;
+        min-height: 0;
       }
 
-      .experience-item:not(:last-child) {
-        border-bottom: 1px solid var(--line);
+      .capability-group {
+        grid-template-columns: 30px minmax(0, 1fr);
       }
 
       .portfolio-box {
@@ -675,7 +797,7 @@
       }
 
       .experience-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .portfolio-box {
@@ -701,9 +823,9 @@
         <div>
           <p class="eyebrow">Quality · Data · Operations</p>
           <h1>김제은</h1>
-          <p class="role">Quality Operations Specialist</p>
+          <p class="role">Quality &amp; Operations Improvement</p>
           <p class="headline">문제를 구조화하고, 데이터와 현장을 연결해<br>실행 가능한 개선안을 설계합니다.</p>
-          <p class="hero-copy">주어진 방식에 머무르기보다 문제의 원인을 정의하고, 데이터를 바탕으로 개선 방향을 설계해 실제 운영에 연결합니다.</p>
+          <p class="hero-copy">식품 품질관리 5년+ 경험을 바탕으로 제조 QC·품질분석·QA부터 이커머스 신선식품 QC까지 경험했으며, 품질기준과 운영 프로세스를 개선해왔습니다.</p>
         </div>
 
         <aside class="profile-card" aria-label="기본 정보">
@@ -717,117 +839,141 @@
       </section>
 
       <div class="content">
-        <section class="resume-section">
-          <h2 class="section-title">Experience</h2>
+        <section class="resume-section experience-section">
+          <div class="section-heading-row">
+            <div>
+              <h2 class="section-title">Experience</h2>
+            </div>
+          </div>
+
           <div class="experience-grid">
             <article class="experience-item">
-              <span class="meta">2025.07 - Present</span>
+              <span class="meta">2025.07 — Present</span>
               <h3>컬리</h3>
-              <span class="item-title">품질관리 스탭</span>
-              <span class="desc">국산과일 중심 신선식품 Quality Operations 및 품질 개선</span>
+              <span class="experience-role">품질관리 스탭</span>
+              <span class="experience-focus">Fresh Food QC · Operations Improvement</span>
+              <ul class="experience-points">
+                <li><strong>국산과일 품목 관리</strong> — VOC 개선 · 검품기준 개선</li>
+                <li><strong>운영 개선</strong> — 반복 업무 자동화 · 표준화</li>
+              </ul>
             </article>
+
             <article class="experience-item">
-              <span class="meta">2023.08 - 2025.06</span>
+              <span class="meta">2023.08 — 2025.06</span>
               <h3>에쓰푸드 음성공장</h3>
-              <span class="item-title">품질보증</span>
-              <span class="desc">미생물, 유통기한, HACCP 기반 제조 QA</span>
+              <span class="experience-role">품질보증</span>
+              <span class="experience-focus">Quality Analysis · Manufacturing QA</span>
+              <ul class="experience-points">
+                <li><strong>품질 분석 중심 업무</strong> — RT-PCR·LIMS 기반 미생물 분석 · 이화학 분석</li>
+                <li><strong>품질보증</strong> — 유통기한 관리 · 공정·환경 모니터링 · 품질 이력 관리</li>
+              </ul>
             </article>
+
             <article class="experience-item">
-              <span class="meta">2023.03 - 2023.07</span>
+              <span class="meta">2023.03 — 2023.07</span>
               <h3>케이터링서비스파트너</h3>
-              <span class="item-title">품질관리</span>
-              <span class="desc">HACCP 기준서, 표시사항 검토, 클레임 원인분석</span>
+              <span class="experience-role">품질관리</span>
+              <span class="experience-focus">Quality Control · Process Management</span>
+              <ul class="experience-points">
+                <li><strong>품질·공정 관리</strong> — HACCP 기준 관리 · 현장 공정 점검</li>
+                <li><strong>품질 이슈 대응</strong> — 표시사항 검토 · 공인검사 · 이물·클레임 원인분석</li>
+              </ul>
             </article>
+
             <article class="experience-item">
-              <span class="meta">2020.01 - 2022.04</span>
+              <span class="meta">2020.01 — 2022.04</span>
               <h3>지앤에프 음성공장</h3>
-              <span class="item-title">품질관리</span>
-              <span class="desc">원부재료 입고, COA 검토, 이화학·미생물 검사</span>
+              <span class="experience-role">품질관리</span>
+              <span class="experience-focus">Manufacturing QC</span>
+              <ul class="experience-points">
+                <li><strong>원부재료·완제품 품질관리</strong> — 입고검사 · 출고 품질 확인</li>
+                <li><strong>품질 분석</strong> — COA 검토 · 이화학·병원성 미생물 검사</li>
+              </ul>
             </article>
           </div>
         </section>
 
+        <section class="resume-section impact-section">
+          <div class="section-heading-row">
+            <div>
+              <h2 class="section-title">Career Highlights</h2>
+              <p class="section-lead">제조 QC부터 신선식품 품질 운영까지, 경력 전반의 핵심 경험과 개선 성과를 요약했습니다.</p>
+            </div>
+          </div>
+          <div class="kpis" aria-label="핵심 성과">
+            <div class="kpi"><b>5년+</b><small>Experience</small><span>식품 품질·운영 실무 경험</span></div>
+            <div class="kpi"><b>품질기준 개선</b><small>Quality Improvement</small><span>국산과일 VOC·검품기준 개선</span></div>
+            <div class="kpi"><b>30분 → 15~20분</b><small>Process Improvement</small><span>마감 공유시간 단축</span></div>
+            <div class="kpi"><b>5개 업무</b><small>Workflow Design</small><span>Web App 기반 루틴업무 통합</span></div>
+          </div>
+        </section>
+
         <section class="resume-section about-section">
-          <h2 class="section-title">About Me</h2>
-          <div class="about-stack">
+          <div class="section-heading-row">
+            <div>
+              <h2 class="section-title">How I Work</h2>
+              <p class="section-lead">문제를 바라보고 해결하는 저의 업무 원칙입니다.</p>
+            </div>
+          </div>
+          <div class="about-stack concise">
             <article class="about">
               <div class="num">01</div>
               <div>
                 <h3>안 되는 이유보다 가능한 방법을 먼저 찾습니다.</h3>
-                <p>저는 쉽게 포기하지 않는 사람입니다. 할 수 있는 가능성이 남아 있는데도 먼저 “안 된다”고 결론 내리기보다, 다른 방법은 없는지 끝까지 찾아보는 편입니다. 주변에서는 저를 성실하고 끈기 있는 사람이라고 이야기하지만, 때로는 고집이 세다는 말을 듣기도 합니다. 하지만 저에게 그 고집은 해결할 수 있는 문제를 쉽게 놓지 않는 태도에 가깝습니다.</p>
-                <p>현재 컬리에서 업무 마감 내용을 Slack으로 수동 공유하는 과정에 비효율이 있다고 느껴 자동화를 고민한 적이 있습니다. 처음에는 Slack Bot을 활용하려 했지만, 사용 중인 워크스페이스의 제약으로 원하는 방식의 자동화를 구현하기 어려웠습니다.</p>
-                <p>그렇다고 여기서 포기하고 싶지는 않았습니다. 다른 기능과 방법을 찾아보던 중 Slack의 리마인더 기능을 발견했고, 매번 달라지는 마감 내용을 어떻게 연결할 수 있을지 고민한 끝에 Web App을 활용하는 방법을 떠올렸습니다. 마감 내용을 Web App에서 확인할 수 있도록 구성하고, 정해진 시간이 되면 리마인더를 통해 해당 페이지로 연결되도록 만들었습니다. 그 결과 기존 약 30분이 걸리던 업무 마감 공유 시간을 <strong>15~20분 수준으로 줄일 수 있었습니다.</strong></p>
-                <p>이 경험을 통해 하나의 방법이 막혔다고 해서 문제 자체가 해결될 수 없는 것은 아니라는 점을 다시 확인했습니다. 저는 어려운 문제가 생겼을 때 안 되는 이유를 찾는 데 머무르기보다, 가능한 방법을 먼저 찾고 실제로 작동하는 해결책이 될 때까지 시도하는 사람입니다.</p>
+                <p>제약이 있더라도 바로 포기하기보다 다른 접근법을 찾습니다. 하나의 방법이 막히면 문제를 다시 정의하고, 실제로 작동하는 대안을 만들어내는 편입니다.</p>
               </div>
             </article>
 
             <article class="about">
               <div class="num">02</div>
               <div>
-                <h3>문제를 발견하면, 원인과 개선 방향부터 생각합니다.</h3>
-                <p>저는 업무를 할 때 가장 먼저 ‘무엇이 문제인지’를 파악하려고 합니다. 그리고 그 문제가 왜 발생하고 있는지, 어떤 방향으로 개선되어야 하는지, 이후에는 어떻게 관리해야 하는지를 순서대로 생각하는 편입니다.</p>
-                <p>현장에서 각종 불출대장을 수기로 작성하고 있었지만, 실제로는 작성이 누락되는 경우가 많았고 사원들도 왜 작성해야 하는지 충분히 인지하지 못하고 있었습니다. 저는 단순히 “작성해달라”고 반복해서 안내하는 것보다, 이 업무 자체를 자연스럽게 루틴화할 수 있는 방법이 필요하다고 생각했습니다.</p>
-                <p>그래서 관리하는 사람에게도 번거롭지 않고, 사용하는 사람도 어렵지 않게 사용할 수 있는 방법을 고민했습니다. 특히 현장에는 디지털 기기에 익숙하지 않은 사원들도 있었기 때문에 기능을 많이 넣기보다 최대한 단순하고 직관적으로 만드는 것을 우선했습니다.</p>
-                <p>그 결과 QR코드를 통해 모바일 Web App에 접속하고 필요한 내용만 등록하면, 해당 기록이 자동으로 시트에 누적되도록 업무 방식을 개선했습니다. 이후 약 2주간 파일럿 기간을 운영하며 실제 사용자들의 불편사항을 확인하고, <strong>‘사용자가 쉽게 이용할 수 있어야 한다’는 기준</strong>으로 기능과 화면을 계속 수정했습니다.</p>
-                <p>현재는 일부 누락 사례를 제외하면 대부분의 사용자가 자연스럽게 해당 방식을 이용하고 있으며, 기존보다 편리하다는 피드백도 받고 있습니다.</p>
-                <p>이 경험처럼 저는 문제를 발견했을 때 단순히 현상을 고치는 것에서 끝내기보다, 왜 그런 문제가 발생했는지를 먼저 이해하고 이후에도 지속적으로 운영될 수 있는 방법까지 고민합니다. 그리고 좋은 개선은 관리자의 관점뿐 아니라 실제 사용하는 사람의 입장에서 편리해야 정착할 수 있다고 생각합니다.</p>
+                <h3>문제의 원인부터 구조화합니다.</h3>
+                <p>무엇이 문제인지, 왜 발생하는지, 어떤 방식으로 개선하고 관리할지를 순서대로 봅니다. 개선안을 만들 때는 관리자뿐 아니라 실제 사용자의 편의성과 정착 가능성까지 함께 고려합니다.</p>
               </div>
             </article>
 
             <article class="about">
               <div class="num">03</div>
               <div>
-                <h3>정해진 틀을 넘어, 스스로 방법을 만들어 성과를 내는 사람으로 성장하고 싶습니다.</h3>
-                <p>제조업 QC로 근무할 때는 정해진 기준과 절차 안에서 정확하게 업무를 수행하는 것이 가장 중요하다고 생각했습니다. 익숙한 방식에서 벗어나 새로운 방법으로 업무를 시도하는 것은 오히려 잘못된 일이라고 생각했던 때도 있었습니다.</p>
-                <p>하지만 현재 물류센터에서 신선식품 QC로 근무하며 이전과는 다른 방식으로 업무를 경험하게 되었습니다. 정해진 업무를 수행하는 것뿐 아니라, 문제를 직접 발견하고 개선 방향을 고민하며 새로운 방식을 만들어볼 수 있는 기회가 많았습니다.</p>
-                <p>처음에는 제조업 중심의 경험만 가지고 있던 제가 이런 업무를 잘할 수 있을지 스스로도 확신이 없었습니다. 그래서 이전에 해왔던 방식에만 기대기보다, 알고 있던 것을 잠시 내려놓고 새로운 방식으로 부딪혀보기로 했습니다. 그 과정에서 업무 자동화와 프로세스 개선 등 실제 변화를 만들어낼 수 있었고, 무엇보다 스스로 방법을 고민하고 결과를 만들어가는 과정에서 큰 재미를 느꼈습니다.</p>
-                <p>저는 앞으로도 정해진 방식에만 머무르기보다 문제에 따라 다양한 방법을 고민하고, 그 방법을 실제 성과로 연결할 수 있는 사람으로 성장하고 싶습니다. 그리고 일을 단순히 수행하는 것이 아니라, 스스로 생각하고 변화시키는 과정 자체를 즐기며 일하고 싶습니다.</p>
+                <h3>더 나은 운영 방식을 만드는 일을 좋아합니다.</h3>
+                <p>기존 절차를 정확히 수행하는 데서 그치지 않고, 데이터와 현장을 바탕으로 더 나은 기준과 프로세스를 설계해 실제 변화로 연결하는 사람으로 성장하고 싶습니다.</p>
               </div>
             </article>
           </div>
         </section>
 
-        <section class="resume-section impact-section">
-          <h2 class="section-title">Impact At A Glance</h2>
-          <div class="kpis" aria-label="핵심 지표">
-            <div class="kpi"><b>5년+</b><small>Experience</small><span>식품 품질·운영 실무 경험</span></div>
-            <div class="kpi"><b>2주 Pilot</b><small>User Validation</small><span>현장 피드백 기반 개선·정착</span></div>
-            <div class="kpi"><b>30분 → 15~20분</b><small>Process Improvement</small><span>마감 공유시간 단축</span></div>
-            <div class="kpi"><b>5개 업무</b><small>Workflow Design</small><span>Web App 기반 루틴업무 통합</span></div>
-          </div>
-        </section>
-
         <section class="resume-section capability-layout">
           <div>
-            <h2 class="section-title">Capabilities</h2>
+            <h2 class="section-title">Core Capabilities</h2>
             <div class="capabilities">
               <div class="capability-group">
-                <h3>Quality</h3>
-                <ul>
-                  <li>Quality Operations</li>
-                  <li>QA/QC</li>
-                  <li>VOC Analysis</li>
-                </ul>
+                <span class="capability-no">01</span>
+                <div>
+                  <h3>품질 문제 분석 및 기준 개선</h3>
+                  <p>VOC·측정·관능 데이터를 바탕으로 품질 이슈의 원인을 확인하고, 검품기준과 관리방식 개선안으로 연결합니다.</p>
+                </div>
               </div>
+
               <div class="capability-group">
-                <h3>Planning &amp; Operations</h3>
-                <ul>
-                  <li>Process Improvement</li>
-                  <li>Workflow Design</li>
-                  <li>Standardization</li>
-                </ul>
+                <span class="capability-no">02</span>
+                <div>
+                  <h3>운영 프로세스 개선 및 표준화</h3>
+                  <p>반복·수기 업무의 흐름을 분석해 더 단순한 프로세스로 재설계하고, 기준서·가이드·운영 방식으로 표준화합니다.</p>
+                </div>
               </div>
+
               <div class="capability-group">
-                <h3>Tools</h3>
-                <ul>
-                  <li>Excel</li>
-                  <li>Power Query</li>
-                  <li>Google Sheets</li>
-                  <li>Apps Script</li>
-                  <li>Slack Automation</li>
-                  <li>AI(Codex, Gemini)-assisted Workflow Design</li>
-                </ul>
+                <span class="capability-no">03</span>
+                <div>
+                  <h3>데이터 기반 업무 자동화</h3>
+                  <p>데이터 입력·누적·결과 생성·공유 과정을 연결해 반복 업무를 줄이고 지속 가능한 운영 흐름으로 만듭니다.</p>
+                </div>
               </div>
+            </div>
+
+            <div class="tools-row">
+              <strong>TOOLS &amp; SYSTEMS</strong>
+              <p>Excel · Power Query · Google Sheets · Apps Script · Slack · RMS · WMS · LIMS · Codex · Gemini</p>
             </div>
           </div>
 
@@ -848,7 +994,7 @@
                   <li>
                     <span class="item-title">삼육대학교 · 학사</span>
                     <span class="desc">동물생명자원학과 / 식품영양학과 복수전공</span>
-                    <span class="meta">2015.03 - 2019.08 · 졸업</span>
+                    <span class="meta">2015.03 — 2019.08 · 졸업</span>
                   </li>
                 </ul>
               </div>
@@ -859,10 +1005,10 @@
         <section class="resume-section portfolio-box">
           <div>
             <p class="section-title">Selected Case Studies</p>
-            <h2>성과를 만든 과정이 궁금하다면</h2>
-            <span class="desc">품질기준 개선, 판매일수 검증, QC 자동화 사례와 첨부 PPT를 별도 포트폴리오에서 확인할 수 있습니다.</span>
+            <h2>문제 정의부터 실행 결과까지, 실제 사례로 보여드리겠습니다.</h2>
+            <span class="desc">품질기준 개선, 운영 프로세스 재설계, 업무 자동화 경험을 Problem → Analysis → Solution → Impact 구조로 정리했습니다.</span>
           </div>
-          <a class="btn" href="https://kimyn6727.github.io/portfolio/portfolio.html" target="_blank" rel="noopener noreferrer">포트폴리오 확인하기 →</a>
+          <a class="btn" href="https://kimyn6727.github.io/portfolio/portfolio.html" target="_blank" rel="noopener noreferrer">Portfolio 보기 (Case Study) →</a>
         </section>
       </div>
     </article>
