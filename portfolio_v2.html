@@ -159,6 +159,67 @@
     .btn:hover { background: #6d3bbd; color: #fff; transform: translateY(-1px); }
     .cap { display: inline-flex; align-items: center; border: 1px solid #ded6ec; border-radius: 999px; padding: 6px 10px; background: #fbf8ff; color: #625b71; font-size: 12px; font-weight: 800; }
     .support { border-top: 1px solid #ded6ec; padding-top: 24px; }
+
+    /* Added: Selected Impact */
+    .impact-summary {
+      border-top: 1px solid #ded6ec;
+      background: linear-gradient(180deg, #ffffff 0%, #fbf8ff 100%);
+    }
+    .impact-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 34px;
+    }
+    .impact-card {
+      min-height: 190px;
+      border: 1px solid #ded6ec;
+      border-radius: 20px;
+      background: #fff;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(31, 27, 46, .045);
+    }
+    .impact-card.wide { grid-column: span 2; }
+    .impact-status {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #f7f2ff;
+      color: #6d3bbd;
+      font-size: 10px;
+      line-height: 1;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .impact-number {
+      margin-top: 18px;
+      color: #1f1b2e;
+      font-size: 30px;
+      line-height: 1.15;
+      font-weight: 900;
+    }
+    .impact-card h3 {
+      margin-top: 10px;
+      color: #1f1b2e;
+      font-size: 16px;
+      line-height: 1.45;
+      font-weight: 900;
+    }
+    .impact-card p {
+      margin-top: 10px;
+      color: #625b71;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .impact-note {
+      margin-top: 22px;
+      color: #746b84;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
     @media (max-width: 760px) {
       .cover { min-height: 560px; }
       .cover-title { left: 28px; right: 28px; top: 42%; width: auto; padding-right: 0; }
@@ -173,6 +234,8 @@
       .solve-step::after { content: "↓"; left: 0; right: auto; top: auto; bottom: -10px; }
       .case-title { font-size: 23px; }
       .statement p { font-size: 17px; }
+      .impact-summary-grid { grid-template-columns: 1fr; }
+      .impact-card.wide { grid-column: auto; }
     }
     @media print {
       body { background: #fff !important; }
@@ -202,7 +265,7 @@
       <div class="cover-title">
         <h1>PORTFOLIO</h1>
         <p>Quality Operations Casebook</p>
-        <p>문제를 정의하고, 데이터를 바탕으로 개선안을 설계한 경험을 정리한 Casebook</p>
+        <p>문제를 정의하고, 데이터를 바탕으로 개선안을 설계해 운영에 연결합니다.</p>
         <div class="cover-contact">
           <p>김제은</p>
           <p>kimyn6727@naver.com</p>
@@ -240,8 +303,13 @@
           <span class="toc-title">PB 간편과일 판매일수 재설정</span>
           <span class="toc-desc">반복 품질저하 검증과 판매마감일수 1일 단축 제안</span>
         </a>
-        <a class="toc-row" href="#supporting">
+        <a class="toc-row" href="#case-shine">
           <span class="toc-num">06</span>
+          <span class="toc-title">샤인머스켓 후숙 안내 개선</span>
+          <span class="toc-desc">후숙 당도 상승 표현 검증 · 상세페이지 정보 개선 제안</span>
+        </a>
+        <a class="toc-row" href="#supporting">
+          <span class="toc-num">07</span>
           <span class="toc-title">Supporting Experience</span>
           <span class="toc-desc">제조 QA, 측정장비 표준화, Onboarding Guide</span>
         </a>
@@ -279,10 +347,62 @@
       <p class="solve-bridge mt-8">아래 Case Study에서는 이 흐름을 실제 업무에 어떻게 적용했는지 보여드리겠습니다.</p>
     </section>
 
+
+    <section id="impact-summary" class="section impact-summary">
+      <p class="eyebrow">Selected Impact</p>
+      <h2 class="mt-4 text-3xl font-black leading-tight text-ink">운영에서 만든 변화와 검증 결과</h2>
+
+      <div class="impact-summary-grid">
+        <article class="impact-card">
+          <span class="impact-status">Implemented</span>
+          <div class="impact-number">약 33% 단축</div>
+          <h3>QC 마감 공유시간 개선</h3>
+          <p>분산된 입력·결과 생성·Slack 공유 흐름을 재설계해 업무 마감시간을 30분에서 20분으로 줄였습니다.</p>
+        </article>
+
+        <article class="impact-card">
+          <span class="impact-status">Implemented</span>
+          <div class="impact-number">7개 운영영역</div>
+          <h3>반복 업무 자동화 적용</h3>
+          <p>당도 측정, 마감, 누적 저장, 공유 등 반복 입력과 수동 공유가 발생하던 운영 영역에 자동화 구조를 적용했습니다.</p>
+        </article>
+
+        <article class="impact-card">
+          <span class="impact-status">Pilot Completed</span>
+          <div class="impact-number">5개 업무 통합</div>
+          <h3>QR·Web App 기반 Workflow 개선</h3>
+          <p>약 2주간 Pilot을 운영하며 현장 피드백을 반영했고, 수기로 분산되던 5개 반복 업무를 하나의 진입점으로 통합했습니다.</p>
+        </article>
+
+        <article class="impact-card">
+          <span class="impact-status">Standard Proposal</span>
+          <div class="impact-number">25% · 33.7%</div>
+          <h3>사과 저당도 혼입 리스크 확인</h3>
+          <p>13 Brix SKU 25%, 14 Brix SKU 33.7%의 기준 미달 개체를 확인해 평균 중심 관리의 한계를 수치로 제시하고 최소당도 관리기준을 제안했습니다.</p>
+        </article>
+
+        <article class="impact-card">
+          <span class="impact-status">Pilot Proposed</span>
+          <div class="impact-number">11 Brix</div>
+          <h3>수박 당도 관리기준 상향안</h3>
+          <p>VOC·당도·관능평가와 기준 비교를 바탕으로 수박 당도 관리기준을 11 Brix로 상향하는 Pilot 방향을 제안했습니다.</p>
+        </article>
+
+        <article class="impact-card">
+          <span class="impact-status">Content Improvement</span>
+          <div class="impact-number">일관된 당도 상승 미확인</div>
+          <h3>샤인머스켓 후숙 안내 개선</h3>
+          <p>2개 공급사·16EA를 3일간 동일 조건에서 검증한 결과 당도 변화 방향이 상반되게 나타나, ‘후숙 후 당도 상승’ 표현 삭제와 보관·섭취 안내 개편을 제안했습니다.</p>
+        </article>
+      </div>
+
+      <p class="impact-note">※ 실제 운영 적용, Pilot 완료, 기준·콘텐츠 제안 단계를 구분해 표기했습니다.</p>
+    </section>
+
     <section id="cases" class="section hairline">
       <p class="eyebrow">Representative Case Studies</p>
       <h2 class="mt-4 text-3xl font-black leading-tight text-ink">대표 Case Study</h2>
-      <p class="copy mt-5 max-w-3xl">품질 판단, 기준화, 운영 자동화가 뚜렷하게 드러나는 네 가지 사례를 같은 구조로 정리했습니다.</p>
+      <p class="copy mt-5 max-w-3xl">품질 판단, 기준화, 운영 자동화에서 문제를 발견하고 개선으로 연결한 대표 사례입니다.</p>
 
       <div class="mt-10 space-y-12">
         <article id="case-ops" class="case-shell">
@@ -398,6 +518,51 @@
               <div class="work-block"><h4>02 Analysis</h4><p class="mt-3">상품별 품질 변화와 외관, 맛, 드립 이슈를 확인하고 PB 상품과 Dole 상품의 품질 편차를 비교했습니다. 1차 확인 후 일부 상품은 재검을 통해 품질저하의 반복성을 다시 확인했습니다.</p></div>
               <div class="work-block"><h4>03 Solution</h4><p class="mt-3">품질 저하가 반복된 일부 SKU는 판매마감일수를 현행 대비 1일 단축하는 Pilot 운영안을 설계했습니다. 이후 VOC와 관능평가를 통해 최종 판매일수를 확정하는 관리 방향까지 제시했습니다.</p></div>
               <div class="work-block"><h4>04 Impact</h4><span class="status-badge mt-3">Pilot Proposed</span><p class="mt-3">판매일수 단축 운영안을 제안했습니다. 실제 적용 결과가 아닌 Pilot 제안 단계로 구분하고, 검증 이후 운영 적용을 검토하는 방식으로 정리했습니다.</p></div>
+            </div>
+          </div>
+        </article>
+
+
+        <article id="case-shine" class="case-shell">
+          <div class="case-top px-6 py-6 sm:px-8">
+            <div class="flex flex-col justify-between gap-5 lg:flex-row lg:items-start">
+              <div>
+                <p class="case-no">Case 05 · Product Content & Quality Communication</p>
+                <h3 class="case-title mt-2">샤인머스켓 ‘후숙 후 당도 상승’ 안내 문구 개선</h3>
+                <p class="copy mt-4 max-w-3xl">상품 특성과 실제 검증 결과가 맞지 않는 고객 안내를 발견하고, 품질 정보와 섭취 가이드를 사실 기반으로 다시 설계했습니다.</p>
+                <div class="case-meta">
+                  <p><strong>My Role</strong> 고객 안내 문구 검토, 당도 검증, VOC 확인, 개선안 설계</p>
+                  <p><strong>Tools</strong> 당도 측정 · 보관 검증 · VOC · 외부 근거 비교</p>
+                  <p><strong>Scope</strong> 2개 공급사 · 총 16EA · 3일 보관 검증</p>
+                  <p><strong>Status</strong> 콘텐츠 개선안 제안</p>
+                </div>
+              </div>
+              <a class="btn" href="portfolio_attachments/shine_muscat_ripening_content_proposal.pptx" target="_blank" rel="noopener noreferrer">제안 PPT</a>
+            </div>
+          </div>
+
+          <div class="px-6 py-8 sm:px-8">
+            <div class="grid gap-6 lg:grid-cols-4">
+              <div class="work-block">
+                <h4>01 Problem</h4>
+                <p class="mt-3">상세페이지에는 ‘후숙 후 당도가 한층 높아집니다’라는 안내가 있었지만, 고객 VOC에서 안내대로 숙성해도 맛 차이를 느끼기 어렵다는 불만이 확인되었습니다. 실제 과실 특성과 고객 안내가 일치하는지 검증이 필요했습니다.</p>
+              </div>
+
+              <div class="work-block">
+                <h4>02 Analysis</h4>
+                <p class="mt-3">샤인머스켓 16EA를 3일간 동일 조건에서 보관하며 공급사별 당도 변화를 확인했습니다. 아이농은 19.14→20.99 Brix로 상승했지만 금성농산은 19.16→18.40 Brix로 하락해 일관된 후숙 당도 상승 경향이 확인되지 않았습니다. 포도는 수확 후 미숙과의 성숙이 거의 없는 비호흡급등형 과실이라는 외부 근거도 함께 검토했습니다.</p>
+              </div>
+
+              <div class="work-block">
+                <h4>03 Solution</h4>
+                <p class="mt-3">‘후숙 시 당도 상승’ 표현을 전면 삭제하고, 냉장 보관을 기본으로 하되 섭취 직전 잠시 상온에 두어 향과 풍미를 느끼도록 안내하는 방향으로 전환했습니다. 녹색→황록색 변화도 후숙으로 단정하지 않고 수확 숙도와 개체 특성 차이로 설명하도록 제안했습니다.</p>
+              </div>
+
+              <div class="work-block">
+                <h4>04 Impact</h4>
+                <span class="status-badge mt-3">Content Proposal</span>
+                <p class="mt-3">고객 기대와 실제 품질 간 불일치를 줄이고, 장기 방치에 따른 탈립·선도 저하 위험을 낮출 수 있는 상세페이지 개선안을 제안했습니다. 문구 변경 후에는 맛·당도 관련 리뷰와 VOC 추이를 모니터링하는 사후 관리 방향까지 함께 설계했습니다.</p>
+              </div>
             </div>
           </div>
         </article>
