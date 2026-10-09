@@ -715,95 +715,143 @@
       }
     }
 
+
     @media print {
       @page {
-        size: A4;
-        margin: 12mm;
+        size: A4 portrait;
+        margin: 0;
       }
 
+      html,
       body {
-        background: #fff;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
       .toolbar {
-        display: none;
+        display: none !important;
       }
 
+      /*
+       * 웹 화면 기준 폭(1120px)을 유지한 채
+       * A4 가로 폭(약 794px)에 맞게 전체를 동일 비율로 축소합니다.
+       * 794 / 1120 ≒ 0.709
+       */
       .page {
-        max-width: none;
-        margin: 0;
-        padding: 0;
+        width: 1120px !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 20px !important;
+        zoom: 0.709;
       }
 
       .paper {
-        border: 0;
-        border-radius: 0;
-        box-shadow: none;
+        width: 100% !important;
+        border: 1px solid var(--line) !important;
+        border-radius: 28px !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
       }
 
+      /*
+       * 인쇄 시 A4 폭 때문에 max-width:920px 반응형 규칙이
+       * 적용되지 않도록 데스크톱 레이아웃을 명시적으로 복원합니다.
+       */
       .hero {
-        padding: 0 0 10mm;
+        grid-template-columns: minmax(0, 1fr) 250px !important;
+        gap: 32px !important;
+        padding: 44px !important;
       }
 
-      .kpis {
-        break-inside: avoid;
-      }
-
-      .kpi {
-        padding: 14px 16px;
-      }
-
-      .kpi b {
-        font-size: 17px;
-      }
-
-      .kpi small {
-        font-size: 9px;
+      .profile-card {
+        display: flex !important;
+        grid-template-columns: none !important;
+        align-items: initial !important;
       }
 
       .content {
-        padding: 10mm 0 0;
+        padding: 60px 52px 56px !important;
       }
 
       .resume-section {
-        margin-top: 14mm;
+        margin-top: 72px !important;
       }
 
+      .resume-section:first-child {
+        margin-top: 0 !important;
+      }
+
+      .kpis {
+        grid-template-columns: repeat(4, 1fr) !important;
+      }
+
+      .kpi {
+        padding: 24px 26px !important;
+        border-bottom: 0 !important;
+      }
+
+      .kpi:nth-child(2n) {
+        border-right: 1px solid var(--line) !important;
+      }
+
+      .kpi:last-child {
+        border-right: 0 !important;
+      }
+
+      .experience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .capability-layout {
+        grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1fr) !important;
+      }
+
+      .portfolio-box {
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        padding: 32px 36px !important;
+      }
+
+      /* 화면용 폰트 크기 유지 */
+      h1 {
+        font-size: 44px !important;
+      }
+
+      .headline {
+        font-size: 25px !important;
+      }
+
+      .kpi b {
+        font-size: 24px !important;
+      }
+
+      .kpi small {
+        font-size: 11px !important;
+      }
+
+      .about h3 {
+        font-size: 24px !important;
+      }
+
+      .about p {
+        font-size: 14.5px !important;
+        line-height: 1.82 !important;
+      }
+
+      /* 페이지 중간 잘림 최소화 */
+      .kpis,
       .about,
-      .impact-section,
       .experience-item,
       .capability-group,
       .credential-group,
       .portfolio-box {
         break-inside: avoid;
-        box-shadow: none;
-      }
-
-      .about {
-        padding-bottom: 8mm;
-      }
-
-      .about + .about {
-        padding-top: 8mm;
-      }
-
-      .about h3 {
-        font-size: 18px;
-      }
-
-      .about p {
-        font-size: 12px;
-        line-height: 1.65;
-      }
-
-      .experience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .portfolio-box {
-        padding: 10mm;
+        page-break-inside: avoid;
       }
     }
+
   </style>
 </head>
 <body>
