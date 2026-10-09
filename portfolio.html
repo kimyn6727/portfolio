@@ -237,15 +237,63 @@
       .impact-summary-grid { grid-template-columns: 1fr; }
       .impact-card.wide { grid-column: auto; }
     }
+
     @media print {
-      body { background: #fff !important; }
-      .no-print { display: none !important; }
-      .sheet { max-width: none !important; }
-      .cover { min-height: 520px !important; }
-      .section { padding: 36px 28px !important; }
-      .case-shell, .support { break-inside: avoid; }
-      a { color: #6d3bbd !important; text-decoration: none !important; }
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      /*
+       * 웹 화면 기준 폭(1180px)을 유지한 채
+       * A4 가로 폭(약 794px)에 맞게 전체를 동일 비율로 축소합니다.
+       * 794 / 1180 ≒ 0.673
+       */
+      .sheet {
+        width: 1180px !important;
+        max-width: none !important;
+        margin: 0 !important;
+        zoom: 0.673;
+        background: #fff !important;
+        box-shadow: none !important;
+      }
+
+      /* 화면용 크기/여백을 그대로 유지 */
+      .cover {
+        min-height: 720px !important;
+      }
+
+      .section {
+        padding: 72px 40px !important;
+      }
+
+      /* 카드가 페이지 중간에서 잘리는 현상 최소화 */
+      .case-shell,
+      .support,
+      .impact-card,
+      .solve-flow {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      a {
+        text-decoration: none !important;
+      }
     }
+
   </style>
 </head>
 <body>
