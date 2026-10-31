@@ -1,1065 +1,760 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>김제은 이력서</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    @font-face {
-      font-family: "Pretendard";
-      src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/woff2/Pretendard-Regular.woff2") format("woff2");
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    :root {
-      --bg: #f5f1fb;
-      --paper: #ffffff;
-      --ink: #1f1b2e;
-      --text: #3f394e;
-      --muted: #746b84;
-      --accent: #6d3bbd;
-      --accent-dark: #4f258f;
-      --soft: #f7f2ff;
-      --soft-strong: #eee5fb;
-      --line: #ddd4eb;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #f8f5fd 0%, #eee7f8 100%);
-      color: var(--text);
-      font-family: "Pretendard", "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      line-height: 1.78;
-      word-break: keep-all;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .toolbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(16px);
-    }
-
-    .toolbar-inner {
-      width: min(1120px, 100%);
-      padding: 14px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .brand {
-      font: 800 15px/1 "Inter", sans-serif;
-      color: var(--ink);
-      letter-spacing: 0;
-    }
-
-    .toolbar-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      padding: 9px 14px;
-      border: 1px solid var(--accent);
-      border-radius: 999px;
-      background: #fff;
-      color: var(--accent-dark);
-      font-weight: 800;
-      font-size: 13px;
-      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      background: var(--soft);
-    }
-
-    .btn.primary:hover {
-      background: var(--accent-dark);
-    }
-
-    .page {
-      max-width: 1120px;
-      margin: 32px auto 56px;
-      padding: 0 20px;
-    }
-
-    .paper {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: 0 24px 70px rgba(79, 37, 143, 0.12);
-      overflow: hidden;
-    }
-
-    .hero {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 250px;
-      gap: 32px;
-      padding: 44px;
-      background:
-        radial-gradient(circle at 90% 15%, rgba(157, 128, 204, 0.3), transparent 34%),
-        linear-gradient(135deg, #ffffff 0%, #f4eefc 100%);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .eyebrow {
-      margin: 0 0 14px;
-      color: var(--accent-dark);
-      font: 800 12px/1.4 "Inter", sans-serif;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      color: var(--ink);
-      font: 800 44px/1.1 "Inter", "Pretendard", sans-serif;
-      letter-spacing: 0;
-    }
-
-    .role {
-      margin: 10px 0 20px;
-      color: var(--accent-dark);
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .headline {
-      margin: 0;
-      max-width: 680px;
-      color: var(--ink);
-      font-size: 25px;
-      line-height: 1.45;
-      font-weight: 800;
-    }
-
-    .hero-copy {
-      margin: 20px 0 0;
-      max-width: 690px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .profile-card {
-      align-self: stretch;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 22px;
-      border: 1px solid rgba(109, 59, 189, 0.18);
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .photo {
-      width: 120px;
-      height: 148px;
-      border-radius: 24px;
-      object-fit: cover;
-      object-position: center top;
-      border: 1px solid var(--line);
-      box-shadow: 0 14px 34px rgba(79, 37, 143, 0.14);
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 8px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .contact-list strong {
-      color: var(--ink);
-    }
-
-    .kpis {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #fff;
-    }
-
-    .kpi {
-      padding: 24px 26px;
-      border-right: 1px solid var(--line);
-    }
-
-    .kpi:last-child {
-      border-right: 0;
-    }
-
-    .kpi b {
-      display: block;
-      color: var(--accent-dark);
-      font: 800 24px/1.12 "Inter", "Pretendard", sans-serif;
-      letter-spacing: 0;
-      white-space: nowrap;
-    }
-
-    .kpi small {
-      display: block;
-      margin-top: 8px;
-      color: var(--accent-dark);
-      font: 800 11px/1.2 "Inter", sans-serif;
-      letter-spacing: 0;
-      text-transform: uppercase;
-    }
-
-    .kpi span {
-      display: block;
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 1.35;
-    }
-
-    .content {
-      padding: 60px 52px 56px;
-    }
-
-    .resume-section {
-      margin-top: 72px;
-    }
-
-    .resume-section:first-child {
-      margin-top: 0;
-    }
-
-    .section-title {
-      margin: 0 0 10px;
-      color: var(--accent-dark);
-      font: 800 13px/1.2 "Inter", "Pretendard", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0;
-    }
-
-    .section-heading-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .section-lead {
-      margin: 8px 0 0;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: 13.5px;
-      line-height: 1.7;
-    }
-
-    .desc.subtle {
-      margin-top: 8px;
-      color: #8a8295;
-      font-size: 12px;
-    }
-
-    .about-section .section-title,
-    .impact-section .section-title {
-      margin-bottom: 0;
-    }
-
-    .about-stack {
-      display: grid;
-      gap: 0;
-    }
-
-    .about-stack.concise .about {
-      padding-bottom: 36px;
-    }
-
-    .about-stack.concise .about + .about {
-      padding-top: 36px;
-    }
-
-    .about-stack.concise .about p {
-      max-width: 780px;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 76px minmax(0, 1fr);
-      gap: 22px;
-      padding: 0 0 52px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .about + .about {
-      padding-top: 52px;
-    }
-
-    .about:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-
-    .num {
-      color: var(--accent-dark);
-      font: 800 21px/1 "Inter", sans-serif;
-    }
-
-    .about h3 {
-      margin: 0 0 16px;
-      color: var(--ink);
-      font-size: 24px;
-      line-height: 1.35;
-      letter-spacing: 0;
-    }
-
-    .about p {
-      margin: 0 0 13px;
-      max-width: 730px;
-      color: var(--text);
-      font-size: 14.5px;
-      line-height: 1.82;
-    }
-
-    .about p:last-child {
-      margin-bottom: 0;
-    }
-
-    .about strong {
-      color: var(--accent-dark);
-      font-weight: 800;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0;
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .experience-item {
-      min-height: 210px;
-      padding: 26px 28px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #fff;
-    }
-
-    .experience-item h3,
-    .capability-group h3,
-    .credential-group h3 {
-      margin: 6px 0 0;
-      color: var(--ink);
-      font-size: 18px;
-      line-height: 1.35;
-    }
-
-    .experience-role {
-      display: block;
-      margin-top: 5px;
-      color: var(--ink);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .experience-focus {
-      display: inline-flex;
-      margin-top: 12px;
-      color: var(--accent-dark);
-      font-size: 11px;
-      line-height: 1.3;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .experience-points {
-      display: grid;
-      gap: 7px;
-      margin: 12px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .experience-points li {
-      position: relative;
-      padding-left: 12px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .experience-points li::before {
-      content: "·";
-      position: absolute;
-      left: 0;
-      color: var(--accent-dark);
-      font-weight: 900;
-    }
-
-    .item-title {
-      display: block;
-      color: var(--ink);
-      font-weight: 800;
-      line-height: 1.45;
-    }
-
-    .meta {
-      display: block;
-      margin-top: 3px;
-      color: var(--accent-dark);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .desc {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .capability-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1fr);
-      gap: 32px;
-      align-items: start;
-    }
-
-    .capabilities,
-    .credentials {
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-    }
-
-    .capabilities {
-      display: grid;
-      gap: 14px;
-    }
-
-    .capability-group {
-      display: grid;
-      grid-template-columns: 36px minmax(0, 1fr);
-      gap: 14px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(109, 59, 189, 0.12);
-    }
-
-    .capability-group:last-of-type {
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .capability-no {
-      color: var(--accent-dark);
-      font: 800 12px/1.4 "Inter", sans-serif;
-    }
-
-    .capability-group h3 {
-      margin: 0;
-      font-size: 15px;
-    }
-
-    .capability-group p {
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 12.5px;
-      line-height: 1.65;
-    }
-
-    .tools-row {
-      margin-top: 18px;
-      padding-top: 15px;
-      border-top: 1px solid var(--line);
-    }
-
-    .tools-row strong {
-      display: block;
-      color: var(--ink);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .tools-row p {
-      margin: 7px 0 0;
-      color: var(--accent-dark);
-      font-size: 12px;
-      line-height: 1.65;
-      font-weight: 700;
-    }
-
-    .credential-group ul {
-      display: grid;
-      gap: 8px;
-      margin: 12px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .credential-group li {
-      color: var(--accent-dark);
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.45;
-    }
-
-    .credentials {
-      display: grid;
-      gap: 26px;
-    }
-
-    .portfolio-box {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 28px;
-      align-items: center;
-      padding: 32px 36px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-      color: #fff;
-    }
-
-    .portfolio-box .section-title,
-    .portfolio-box .desc {
-      color: #fff;
-    }
-
-    .portfolio-box h2 {
-      margin: 0 0 10px;
-      color: #fff;
-      font-size: 26px;
-      line-height: 1.35;
-    }
-
-    .portfolio-box .btn {
-      min-width: 190px;
-      border-color: rgba(255, 255, 255, 0.7);
-      background: #fff;
-      color: var(--accent-dark);
-    }
-
-    @media (max-width: 920px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .content {
-        padding: 48px 36px 48px;
-      }
-
-      .resume-section {
-        margin-top: 64px;
-      }
-
-      .profile-card {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        align-items: center;
-      }
-
-      .kpis {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .kpi {
-        border-bottom: 1px solid var(--line);
-      }
-
-      .kpi:nth-child(2n) {
-        border-right: 0;
-      }
-
-      .kpi:nth-last-child(-n + 2) {
-        border-bottom: 0;
-      }
-
-      .experience-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .capability-layout,
-      .portfolio-box {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .toolbar-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .page {
-        margin: 0;
-        padding: 0;
-      }
-
-      .paper {
-        border-radius: 0;
-        border-left: 0;
-        border-right: 0;
-      }
-
-      .hero,
-      .content {
-        padding: 28px 20px;
-      }
-
-      h1 {
-        font-size: 36px;
-      }
-
-      .headline {
-        font-size: 22px;
-      }
-
-      .profile-card {
-        grid-template-columns: 1fr;
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding-bottom: 44px;
-      }
-
-      .about + .about {
-        padding-top: 44px;
-      }
-
-      .num {
-        font-size: 18px;
-      }
-
-      .about h3 {
-        font-size: 21px;
-      }
-
-      .section-heading-row {
-        margin-bottom: 20px;
-      }
-
-      .section-lead {
-        font-size: 13px;
-      }
-
-      .kpis {
-        grid-template-columns: 1fr;
-      }
-
-      .kpi {
-        border-right: 0;
-      }
-
-      .kpi:not(:last-child) {
-        border-bottom: 1px solid var(--line);
-      }
-
-      .kpi b {
-        font-size: 22px;
-      }
-
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .experience-item {
-        min-height: 0;
-      }
-
-      .capability-group {
-        grid-template-columns: 30px minmax(0, 1fr);
-      }
-
-      .portfolio-box {
-        padding: 28px 24px;
-      }
-    }
-
-
-    @media print {
-      @page {
-        size: A4 portrait;
-        margin: 0;
-      }
-
-      html,
-      body {
-        margin: 0 !important;
-        padding: 0 !important;
-        background: #fff !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
-
-      .toolbar {
-        display: none !important;
-      }
-
-      /*
-       * 웹 화면 기준 폭(1120px)을 유지한 채
-       * A4 가로 폭(약 794px)에 맞게 전체를 동일 비율로 축소합니다.
-       * 794 / 1120 ≒ 0.709
-       */
-      .page {
-        width: 1120px !important;
-        max-width: none !important;
-        margin: 0 !important;
-        padding: 0 20px !important;
-        zoom: 0.709;
-      }
-
-      .paper {
-        width: 100% !important;
-        border: 1px solid var(--line) !important;
-        border-radius: 28px !important;
-        box-shadow: none !important;
-        overflow: hidden !important;
-      }
-
-      /*
-       * 인쇄 시 A4 폭 때문에 max-width:920px 반응형 규칙이
-       * 적용되지 않도록 데스크톱 레이아웃을 명시적으로 복원합니다.
-       */
-      .hero {
-        grid-template-columns: minmax(0, 1fr) 250px !important;
-        gap: 32px !important;
-        padding: 44px !important;
-      }
-
-      .profile-card {
-        display: flex !important;
-        grid-template-columns: none !important;
-        align-items: initial !important;
-      }
-
-      .content {
-        padding: 60px 52px 56px !important;
-      }
-
-      .resume-section {
-        margin-top: 72px !important;
-      }
-
-      .resume-section:first-child {
-        margin-top: 0 !important;
-      }
-
-      .kpis {
-        grid-template-columns: repeat(4, 1fr) !important;
-      }
-
-      .kpi {
-        padding: 24px 26px !important;
-        border-bottom: 0 !important;
-      }
-
-      .kpi:nth-child(2n) {
-        border-right: 1px solid var(--line) !important;
-      }
-
-      .kpi:last-child {
-        border-right: 0 !important;
-      }
-
-      .experience-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      }
-
-      .capability-layout {
-        grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1fr) !important;
-      }
-
-      .portfolio-box {
-        grid-template-columns: minmax(0, 1fr) auto !important;
-        padding: 32px 36px !important;
-      }
-
-      /* 화면용 폰트 크기 유지 */
-      h1 {
-        font-size: 44px !important;
-      }
-
-      .headline {
-        font-size: 25px !important;
-      }
-
-      .kpi b {
-        font-size: 24px !important;
-      }
-
-      .kpi small {
-        font-size: 11px !important;
-      }
-
-      .about h3 {
-        font-size: 24px !important;
-      }
-
-      .about p {
-        font-size: 14.5px !important;
-        line-height: 1.82 !important;
-      }
-
-      /* 페이지 중간 잘림 최소화 */
-      .kpis,
-      .about,
-      .experience-item,
-      .capability-group,
-      .credential-group,
-      .portfolio-box {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-    }
-
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김제은 이력서 | Planning · Process Improvement · Operations</title>
+<style>
+  @font-face{
+    font-family:"Pretendard";
+    src:url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/woff2/Pretendard-Regular.woff2") format("woff2");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Pretendard";
+    src:url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/woff2/Pretendard-SemiBold.woff2") format("woff2");
+    font-weight:600;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Pretendard";
+    src:url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/woff2/Pretendard-Bold.woff2") format("woff2");
+    font-weight:700;
+    font-style:normal;
+    font-display:swap;
+  }
+
+  :root{
+    --ink:#1f1c2c;
+    --text:#484255;
+    --muted:#766f82;
+    --accent:#5d2fb1;
+    --accent-soft:#f5f0fc;
+    --line:#ddd5e9;
+    --paper:#fff;
+    --bg:#eeeaf4;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Pretendard",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    word-break:keep-all;
+  }
+  a{color:inherit;text-decoration:none}
+
+  .toolbar{
+    position:sticky;
+    top:0;
+    z-index:10;
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    padding:10px;
+    background:rgba(255,255,255,.92);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(8px);
+  }
+  .toolbar a,.toolbar button{
+    border:1px solid var(--accent);
+    border-radius:999px;
+    padding:8px 14px;
+    background:#fff;
+    color:var(--accent);
+    font:700 12px/1 "Pretendard",sans-serif;
+    cursor:pointer;
+  }
+  .toolbar button{background:var(--accent);color:#fff}
+
+  .sheet{
+    width:210mm;
+    min-height:297mm;
+    margin:18px auto 40px;
+    padding:13mm 14mm 11mm;
+    background:var(--paper);
+    box-shadow:0 20px 50px rgba(47,34,68,.12);
+  }
+
+  /* Header */
+  .header{
+    padding-bottom:5.5mm;
+    border-bottom:1px solid var(--line);
+  }
+
+  .header-top{
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) 42mm;
+    gap:9mm;
+    align-items:start;
+  }
+
+  .header-main{
+    min-width:0;
+  }
+  .eyebrow{
+    margin:0 0 2.5mm;
+    color:var(--accent);
+    font-size:8pt;
+    line-height:1.2;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  h1{
+    margin:0;
+    color:var(--ink);
+    font-size:27pt;
+    line-height:1;
+    font-weight:700;
+    letter-spacing:-.035em;
+  }
+  .positioning{
+    margin:2.2mm 0 0;
+    color:var(--accent);
+    font-size:10pt;
+    line-height:1.3;
+    font-weight:700;
+  }
+  .headline{
+    margin:4.2mm 0 0;
+    max-width:138mm;
+    color:var(--ink);
+    font-size:14.2pt;
+    line-height:1.42;
+    font-weight:700;
+    letter-spacing:-.02em;
+  }
+  .summary{
+    margin:4.2mm 0 0;
+    max-width:150mm;
+    color:var(--text);
+    font-size:8.6pt;
+    line-height:1.7;
+  }
+  .summary strong{color:var(--ink);font-weight:700}
+
+  .identity{
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-start;
+    padding-top:1mm;
+  }
+  .photo-frame{
+    position:relative;
+    width:39mm;
+    height:48mm;
+    overflow:hidden;
+    border:1px solid var(--line);
+    border-radius:3mm;
+    background:linear-gradient(145deg,#f7f3fb,#ece5f4);
+  }
+  .photo-frame::before{
+    content:"KJ";
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+    color:#a99cb9;
+    font-weight:700;
+    font-size:18pt;
+  }
+  .photo-frame img{
+    position:relative;
+    z-index:1;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+  }
+  .contacts{
+    margin-top:4.5mm;
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:2.4mm 5mm;
+    max-width:112mm;
+  }
+  .contact-row{
+    display:grid;
+    gap:.5mm;
+    min-width:0;
+  }
+  .contact-label{
+    color:var(--accent);
+    font-size:6.2pt;
+    line-height:1.2;
+    font-weight:700;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+  }
+  .contact-value{
+    color:var(--text);
+    font-size:7.5pt;
+    line-height:1.35;
+    overflow-wrap:anywhere;
+  }
+  .contacts strong{color:var(--ink);font-weight:700}
+
+  /* General */
+  .section{margin-top:6.2mm}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:3mm;
+    margin-bottom:3mm;
+  }
+  .section-title{
+    margin:0;
+    color:var(--accent);
+    font-size:8.7pt;
+    line-height:1;
+    font-weight:700;
+    letter-spacing:.055em;
+    text-transform:uppercase;
+  }
+  .section-sub{
+    margin:0;
+    color:var(--muted);
+    font-size:7.2pt;
+    line-height:1.4;
+  }
+
+  /* Experience */
+  .experience{
+    border-top:1.5px solid var(--ink);
+  }
+  .job{
+    display:grid;
+    grid-template-columns:29mm 1fr;
+    gap:4mm;
+    padding:3.3mm 0;
+    border-bottom:1px solid var(--line);
+  }
+  .job-period{
+    color:var(--accent);
+    font-size:7.7pt;
+    line-height:1.35;
+    font-weight:700;
+  }
+  .job-company{
+    margin-top:1mm;
+    color:var(--ink);
+    font-size:10.2pt;
+    line-height:1.25;
+    font-weight:700;
+  }
+  .job-title{
+    margin-top:.8mm;
+    color:var(--muted);
+    font-size:7.8pt;
+    line-height:1.3;
+    font-weight:600;
+  }
+  .job-body{
+    display:grid;
+    grid-template-columns:30mm 1fr;
+    gap:4mm;
+    align-items:start;
+  }
+  .job-focus{
+    color:var(--ink);
+    font-size:8.1pt;
+    line-height:1.45;
+    font-weight:700;
+  }
+  .job-points{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:1mm;
+  }
+  .job-points li{
+    position:relative;
+    padding-left:3mm;
+    color:var(--text);
+    font-size:7.9pt;
+    line-height:1.48;
+  }
+  .job-points li::before{
+    content:"•";
+    position:absolute;
+    left:.5mm;
+    top:0;
+    color:var(--accent);
+    font-weight:700;
+  }
+
+  /* Highlights */
+  .highlights{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .highlight{
+    min-height:22mm;
+    padding:3.5mm 3.8mm;
+    border-right:1px solid var(--line);
+  }
+  .highlight:last-child{border-right:0}
+  .highlight strong{
+    display:block;
+    color:var(--accent);
+    font-size:13pt;
+    line-height:1.1;
+    font-weight:700;
+    letter-spacing:-.02em;
+  }
+  .highlight small{
+    display:block;
+    margin-top:1.5mm;
+    color:var(--ink);
+    font-size:6.5pt;
+    line-height:1.25;
+    font-weight:700;
+    text-transform:uppercase;
+  }
+  .highlight span{
+    display:block;
+    margin-top:1.2mm;
+    color:var(--muted);
+    font-size:7pt;
+    line-height:1.35;
+  }
+
+  /* Lower grid */
+  .lower{
+    display:grid;
+    grid-template-columns:minmax(0,1.75fr) minmax(0,.85fr);
+    gap:8mm;
+    align-items:start;
+  }
+  .cap-list{
+    display:grid;
+    gap:2.4mm;
+    border-top:1px solid var(--line);
+    padding-top:2.5mm;
+  }
+  .cap{
+    display:grid;
+    grid-template-columns:7mm 1fr;
+    gap:2.5mm;
+  }
+  .cap-no{
+    color:var(--accent);
+    font-size:7.3pt;
+    line-height:1.5;
+    font-weight:700;
+  }
+  .cap h3{
+    margin:0;
+    color:var(--ink);
+    font-size:8.7pt;
+    line-height:1.35;
+    font-weight:700;
+  }
+  .cap p{
+    margin:1mm 0 0;
+    color:var(--muted);
+    font-size:7.2pt;
+    line-height:1.5;
+  }
+  .tools{
+    margin-top:2.5mm;
+    padding-top:2.3mm;
+    border-top:1px solid var(--line);
+  }
+  .tools strong{
+    color:var(--ink);
+    font-size:7pt;
+    font-weight:700;
+  }
+  .tools p{
+    margin:1mm 0 0;
+    color:var(--accent);
+    font-size:6.9pt;
+    line-height:1.5;
+    font-weight:600;
+  }
+
+  .credentials{
+    border-top:1px solid var(--line);
+    padding-top:2.5mm;
+    display:grid;
+    gap:4mm;
+  }
+  .cred h3{
+    margin:0 0 1.5mm;
+    color:var(--ink);
+    font-size:8.5pt;
+    line-height:1.3;
+    font-weight:700;
+  }
+  .cred p,.cred li{
+    margin:0;
+    color:var(--text);
+    font-size:7.3pt;
+    line-height:1.55;
+  }
+  .cred ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:.8mm;
+  }
+  .cred .meta{color:var(--muted);font-size:6.8pt}
+
+  /* Portfolio CTA */
+  .portfolio{
+    margin-top:5mm;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:6mm;
+    align-items:center;
+    padding:4mm 5mm;
+    border-radius:4mm;
+    background:var(--accent);
+    color:#fff;
+  }
+  .portfolio-label{
+    margin:0 0 1mm;
+    font-size:6.6pt;
+    font-weight:700;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    opacity:.9;
+  }
+  .portfolio h2{
+    margin:0;
+    font-size:10.8pt;
+    line-height:1.3;
+    font-weight:700;
+  }
+  .portfolio p{
+    margin:1mm 0 0;
+    max-width:128mm;
+    font-size:7.1pt;
+    line-height:1.45;
+    opacity:.88;
+  }
+  .portfolio a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:35mm;
+    padding:2.6mm 4mm;
+    border-radius:999px;
+    background:#fff;
+    color:var(--accent);
+    font-size:7.2pt;
+    line-height:1;
+    font-weight:700;
+  }
+
+  @media(max-width:850px){
+    body{background:#fff}
+    .toolbar{position:static}
+    .sheet{
+      width:100%;
+      min-height:0;
+      margin:0;
+      padding:24px;
+      box-shadow:none;
+    }
+
+    /* 상단 기본정보는 좁은 화면에서도 좌측 정보 + 우측 사진 유지 */
+    .header-top{
+      grid-template-columns:minmax(0, 1fr) 112px;
+      gap:20px;
+      align-items:start;
+    }
+    .identity{
+      margin-top:0;
+      justify-content:flex-start;
+      align-items:flex-end;
+    }
+    .photo-frame{
+      width:104px;
+      height:128px;
+    }
+
+    .job{grid-template-columns:1fr}
+    .job-body{grid-template-columns:1fr}
+    .highlights{grid-template-columns:repeat(2,1fr)}
+    .highlight:nth-child(2){border-right:0}
+    .highlight:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .lower{grid-template-columns:1fr}
+    .portfolio{grid-template-columns:1fr}
+    .portfolio a{justify-self:start}
+  }
+
+  @media(max-width:500px){
+    .header-top{
+      grid-template-columns:minmax(0, 1fr) 92px;
+      gap:14px;
+    }
+    .photo-frame{
+      width:88px;
+      height:110px;
+    }
+    .contact-row{
+      grid-template-columns:54px 1fr;
+      gap:8px;
+    }
+    .headline{
+      font-size:18px;
+    }
+    .summary{
+      font-size:13px;
+    }
+  }
+
+  @page{size:A4;margin:0}
+  @media print{
+    body{background:#fff}
+    .toolbar{display:none!important}
+    .header-top{
+      grid-template-columns:minmax(0, 1fr) 42mm !important;
+    }
+    .sheet{
+      width:210mm;
+      height:297mm;
+      min-height:297mm;
+      margin:0;
+      padding:13mm 14mm 11mm;
+      box-shadow:none;
+      overflow:hidden;
+    }
+    a{color:inherit!important}
+  }
+</style>
 </head>
 <body>
-  <header class="toolbar">
-    <div class="toolbar-inner">
-      <a class="brand" href="./index.html">Kim Jeeun Resume</a>
-      <div class="toolbar-actions">
-        <a class="btn" href="https://kimyn6727.github.io/portfolio/portfolio.html" target="_blank" rel="noopener noreferrer">Portfolio</a>
-        <button class="btn primary" type="button" onclick="window.print()">PDF 저장/인쇄</button>
+<div class="toolbar">
+  <a href="https://kimyn6727.github.io/portfolio/portfolio.html" target="_blank" rel="noopener">Portfolio</a>
+  <button type="button" onclick="window.print()">PDF 저장 / 인쇄</button>
+</div>
+
+<main class="sheet">
+
+  <header class="header">
+    <div class="header-top">
+      <div class="header-main">
+        <p class="eyebrow">Planning · Process Improvement · Operations</p>
+        <h1>김제은</h1>
+        <p class="positioning">식품 품질 현장에서 운영·기획 영역으로 업무 범위를 넓혀가는 실무자</p>
+
+        <div class="contacts">
+          <div class="contact-row">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">kimyn6727@naver.com</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Mobile</span>
+            <span class="contact-value">010-3674-7328</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Location</span>
+            <span class="contact-value">Seoul, Korea</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Portfolio</span>
+            <a class="contact-value" href="https://kimyn6727.github.io/portfolio/portfolio.html">Portfolio / Case Study ↗</a>
+          </div>
+        </div>
       </div>
+
+      <aside class="identity">
+        <div class="photo-frame">
+          <img src="./profile.jpg" alt="김제은 프로필 사진"
+               onerror="this.style.display='none'">
+        </div>
+      </aside>
     </div>
+
+    <p class="headline">문제를 구조화하고, 더 나은 업무 방식으로 연결합니다.</p>
+    <p class="summary">
+      식품 제조업 QC에서 시작해 현재는 물류 현장에서 신선식품 품질관리와 함께 운영 개선·자동화·표준화까지 업무 범위를 넓혀가고 있습니다.
+      문제 상황에 직면하면 <strong>무엇이 문제인지 → 왜 발생했는지 → 어떻게 개선할지 → 어떤 효과를 기대할 수 있는지</strong>를 구조화해 접근하며,
+      앞으로도 현장과 데이터를 바탕으로 실행 가능한 개선안을 설계하고 성과로 연결하고자 합니다.
+    </p>
   </header>
 
-  <main class="page">
-    <article class="paper">
-      <section class="hero">
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-sub">제조 QC · 품질분석 · QA에서 신선식품 QC와 운영 개선까지 경험을 확장해왔습니다.</p>
+    </div>
+
+    <div class="experience">
+      <article class="job">
         <div>
-          <p class="eyebrow">Quality · Data · Operations</p>
-          <h1>김제은</h1>
-          <p class="role">Quality &amp; Operations Improvement</p>
-          <p class="headline">문제를 구조화하고, 데이터와 현장을 연결해<br>실행 가능한 개선안을 설계합니다.</p>
-          <p class="hero-copy">식품 품질관리 5년+ 경험을 바탕으로 제조 QC·품질분석·QA부터 이커머스 신선식품 QC까지 경험했으며, 품질기준과 운영 프로세스를 개선해왔습니다.</p>
+          <div class="job-period">2025.07 — Present</div>
+          <div class="job-company">컬리</div>
+          <div class="job-title">품질관리 스탭</div>
+        </div>
+        <div class="job-body">
+          <div class="job-focus">Fresh Food QC<br>Operations Improvement</div>
+          <ul class="job-points">
+            <li><strong>국산과일 품목 관리</strong> — VOC 분석·개선 및 품목별 검품기준 개선</li>
+            <li><strong>운영 개선</strong> — 반복·수기 업무 자동화 및 프로세스 표준화</li>
+            <li>Google Sheets·Apps Script·Web App 등을 활용한 품질 운영 효율화</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div>
+          <div class="job-period">2023.08 — 2025.06</div>
+          <div class="job-company">에쓰푸드 음성공장</div>
+          <div class="job-title">품질보증</div>
+        </div>
+        <div class="job-body">
+          <div class="job-focus">Quality Analysis<br>Manufacturing QA</div>
+          <ul class="job-points">
+            <li><strong>품질 분석 업무 중심</strong> — RT-PCR·LIMS 기반 미생물 분석 및 이화학 분석</li>
+            <li>유통기한 검증, 공정·환경 모니터링 및 품질 이력 관리</li>
+            <li>공정·도구별 품질 리스크 검증 및 개선 활동</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div>
+          <div class="job-period">2023.03 — 2023.07</div>
+          <div class="job-company">케이터링서비스파트너</div>
+          <div class="job-title">품질관리</div>
+        </div>
+        <div class="job-body">
+          <div class="job-focus">Quality Control<br>Process Management</div>
+          <ul class="job-points">
+            <li><strong>품질·공정 관리</strong> — HACCP 기준 관리 및 현장 공정 점검</li>
+            <li>표시사항 검토 및 공인기관 검사 관리</li>
+            <li>이물·클레임 원인분석 및 현장 개선조치</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div>
+          <div class="job-period">2020.01 — 2022.04</div>
+          <div class="job-company">지앤에프 음성공장</div>
+          <div class="job-title">품질관리</div>
+        </div>
+        <div class="job-body">
+          <div class="job-focus">Manufacturing QC</div>
+          <ul class="job-points">
+            <li>원부재료 입고 및 완제품 출고 품질관리</li>
+            <li>COA 검토 및 이화학·병원성 미생물 검사</li>
+            <li>원료·제품 품질 이상 확인 및 품질 이슈 예방</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">Career Highlights</h2>
+      <p class="section-sub">경력 전반에서 만들어온 핵심 경험과 개선 성과입니다.</p>
+    </div>
+    <div class="highlights">
+      <div class="highlight">
+        <strong>5년+</strong>
+        <small>Experience</small>
+        <span>식품 품질·운영 실무 경험</span>
+      </div>
+      <div class="highlight">
+        <strong>품질기준 개선</strong>
+        <small>Quality Improvement</small>
+        <span>국산과일 VOC·검품기준 개선</span>
+      </div>
+      <div class="highlight">
+        <strong>30분 → 15~20분</strong>
+        <small>Process Improvement</small>
+        <span>업무 마감 프로세스 개선</span>
+      </div>
+      <div class="highlight">
+        <strong>5개 업무 통합</strong>
+        <small>Workflow Design</small>
+        <span>Web App 기반 반복업무 운영 통합</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section lower">
+    <div>
+      <div class="section-head">
+        <h2 class="section-title">Core Capabilities</h2>
+      </div>
+      <div class="cap-list">
+        <div class="cap">
+          <span class="cap-no">01</span>
+          <div>
+            <h3>문제 정의 및 개선안 설계</h3>
+            <p>현상에 머무르지 않고 원인과 영향을 구조화해 확인하고, 데이터와 현장 상황을 바탕으로 실행 가능한 개선 방향을 설계합니다.</p>
+          </div>
+        </div>
+        <div class="cap">
+          <span class="cap-no">02</span>
+          <div>
+            <h3>운영 프로세스 개선 및 표준화</h3>
+            <p>반복·수기 업무의 흐름을 분석해 더 단순한 프로세스로 재설계하고, 기준서·가이드·운영 방식으로 표준화합니다.</p>
+          </div>
+        </div>
+        <div class="cap">
+          <span class="cap-no">03</span>
+          <div>
+            <h3>데이터 기반 업무 자동화</h3>
+            <p>데이터 입력·누적·결과 생성·공유 과정을 연결해 반복 업무를 줄이고 지속 가능한 운영 흐름으로 만듭니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tools">
+        <strong>TOOLS &amp; SYSTEMS</strong>
+        <p>Excel · Power Query · Google Sheets · Apps Script · Slack · RMS · WMS · LIMS · Codex · Gemini</p>
+      </div>
+    </div>
+
+    <aside>
+      <div class="section-head">
+        <h2 class="section-title">Credentials</h2>
+      </div>
+      <div class="credentials">
+        <div class="cred">
+          <h3>Certifications</h3>
+          <ul>
+            <li>식품기사</li>
+            <li>위생사</li>
+            <li>컴퓨터활용능력 1급</li>
+          </ul>
         </div>
 
-        <aside class="profile-card" aria-label="기본 정보">
-          <img class="photo" src="./profile.jpg" alt="김제은 프로필 사진">
-          <ul class="contact-list">
-            <li><strong>Email.</strong> kimyn6727@naver.com</li>
-            <li><strong>Mobile.</strong> 010-3674-7328</li>
-            <li><strong>Location.</strong> Seoul, Korea</li>
-          </ul>
-        </aside>
-      </section>
-
-      <div class="content">
-        <section class="resume-section experience-section">
-          <div class="section-heading-row">
-            <div>
-              <h2 class="section-title">Experience</h2>
-            </div>
-          </div>
-
-          <div class="experience-grid">
-            <article class="experience-item">
-              <span class="meta">2025.07 — Present</span>
-              <h3>컬리</h3>
-              <span class="experience-role">품질관리 스탭</span>
-              <span class="experience-focus">Fresh Food QC · Operations Improvement</span>
-              <ul class="experience-points">
-                <li><strong>국산과일 품목 관리</strong> — VOC 개선 · 검품기준 개선</li>
-                <li><strong>운영 개선</strong> — 반복 업무 자동화 · 표준화</li>
-              </ul>
-            </article>
-
-            <article class="experience-item">
-              <span class="meta">2023.08 — 2025.06</span>
-              <h3>에쓰푸드 음성공장</h3>
-              <span class="experience-role">품질보증</span>
-              <span class="experience-focus">Quality Analysis · Manufacturing QA</span>
-              <ul class="experience-points">
-                <li><strong>품질 분석 중심 업무</strong> — RT-PCR·LIMS 기반 미생물 분석 · 이화학 분석</li>
-                <li><strong>품질보증</strong> — 유통기한 관리 · 공정·환경 모니터링 · 품질 이력 관리</li>
-              </ul>
-            </article>
-
-            <article class="experience-item">
-              <span class="meta">2023.03 — 2023.07</span>
-              <h3>케이터링서비스파트너</h3>
-              <span class="experience-role">품질관리</span>
-              <span class="experience-focus">Quality Control · Process Management</span>
-              <ul class="experience-points">
-                <li><strong>품질·공정 관리</strong> — HACCP 기준 관리 · 현장 공정 점검</li>
-                <li><strong>품질 이슈 대응</strong> — 표시사항 검토 · 공인검사 · 이물·클레임 원인분석</li>
-              </ul>
-            </article>
-
-            <article class="experience-item">
-              <span class="meta">2020.01 — 2022.04</span>
-              <h3>지앤에프 음성공장</h3>
-              <span class="experience-role">품질관리</span>
-              <span class="experience-focus">Manufacturing QC</span>
-              <ul class="experience-points">
-                <li><strong>원부재료·완제품 품질관리</strong> — 입고검사 · 출고 품질 확인</li>
-                <li><strong>품질 분석</strong> — COA 검토 · 이화학·병원성 미생물 검사</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="resume-section impact-section">
-          <div class="section-heading-row">
-            <div>
-              <h2 class="section-title">Career Highlights</h2>
-              <p class="section-lead">제조 QC부터 신선식품 품질 운영까지, 경력 전반의 핵심 경험과 개선 성과를 요약했습니다.</p>
-            </div>
-          </div>
-          <div class="kpis" aria-label="핵심 성과">
-            <div class="kpi"><b>5년+</b><small>Experience</small><span>식품 품질·운영 실무 경험</span></div>
-            <div class="kpi"><b>품질기준 개선</b><small>Quality Improvement</small><span>국산과일 VOC·검품기준 개선</span></div>
-            <div class="kpi"><b>30분 → 15~20분</b><small>Process Improvement</small><span>마감 공유시간 단축</span></div>
-            <div class="kpi"><b>5개 업무</b><small>Workflow Design</small><span>Web App 기반 루틴업무 통합</span></div>
-          </div>
-        </section>
-
-        <section class="resume-section about-section">
-          <div class="section-heading-row">
-            <div>
-              <h2 class="section-title">How I Work</h2>
-              <p class="section-lead">문제를 바라보고 해결하는 저의 업무 원칙입니다.</p>
-            </div>
-          </div>
-          <div class="about-stack concise">
-            <article class="about">
-              <div class="num">01</div>
-              <div>
-                <h3>안 되는 이유보다 가능한 방법을 먼저 찾습니다.</h3>
-                <p>제약이 있더라도 바로 포기하기보다 다른 접근법을 찾습니다. 하나의 방법이 막히면 문제를 다시 정의하고, 실제로 작동하는 대안을 만들어내는 편입니다.</p>
-              </div>
-            </article>
-
-            <article class="about">
-              <div class="num">02</div>
-              <div>
-                <h3>문제의 원인부터 구조화합니다.</h3>
-                <p>무엇이 문제인지, 왜 발생하는지, 어떤 방식으로 개선하고 관리할지를 순서대로 봅니다. 개선안을 만들 때는 관리자뿐 아니라 실제 사용자의 편의성과 정착 가능성까지 함께 고려합니다.</p>
-              </div>
-            </article>
-
-            <article class="about">
-              <div class="num">03</div>
-              <div>
-                <h3>더 나은 운영 방식을 만드는 일을 좋아합니다.</h3>
-                <p>기존 절차를 정확히 수행하는 데서 그치지 않고, 데이터와 현장을 바탕으로 더 나은 기준과 프로세스를 설계해 실제 변화로 연결하는 사람으로 성장하고 싶습니다.</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="resume-section capability-layout">
-          <div>
-            <h2 class="section-title">Core Capabilities</h2>
-            <div class="capabilities">
-              <div class="capability-group">
-                <span class="capability-no">01</span>
-                <div>
-                  <h3>품질 문제 분석 및 기준 개선</h3>
-                  <p>VOC·측정·관능 데이터를 바탕으로 품질 이슈의 원인을 확인하고, 검품기준과 관리방식 개선안으로 연결합니다.</p>
-                </div>
-              </div>
-
-              <div class="capability-group">
-                <span class="capability-no">02</span>
-                <div>
-                  <h3>운영 프로세스 개선 및 표준화</h3>
-                  <p>반복·수기 업무의 흐름을 분석해 더 단순한 프로세스로 재설계하고, 기준서·가이드·운영 방식으로 표준화합니다.</p>
-                </div>
-              </div>
-
-              <div class="capability-group">
-                <span class="capability-no">03</span>
-                <div>
-                  <h3>데이터 기반 업무 자동화</h3>
-                  <p>데이터 입력·누적·결과 생성·공유 과정을 연결해 반복 업무를 줄이고 지속 가능한 운영 흐름으로 만듭니다.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="tools-row">
-              <strong>TOOLS &amp; SYSTEMS</strong>
-              <p>Excel · Power Query · Google Sheets · Apps Script · Slack · RMS · WMS · LIMS · Codex · Gemini</p>
-            </div>
-          </div>
-
-          <div>
-            <h2 class="section-title">Credentials</h2>
-            <div class="credentials">
-              <div class="credential-group">
-                <h3>Certifications</h3>
-                <ul>
-                  <li>식품기사</li>
-                  <li>위생사</li>
-                  <li>컴퓨터활용능력 1급</li>
-                </ul>
-              </div>
-              <div class="credential-group">
-                <h3>Education</h3>
-                <ul>
-                  <li>
-                    <span class="item-title">삼육대학교 · 학사</span>
-                    <span class="desc">동물생명자원학과 / 식품영양학과 복수전공</span>
-                    <span class="meta">2015.03 — 2019.08 · 졸업</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="resume-section portfolio-box">
-          <div>
-            <p class="section-title">Selected Case Studies</p>
-            <h2>문제 정의부터 실행 결과까지, 실제 사례로 보여드리겠습니다.</h2>
-            <span class="desc">품질기준 개선, 운영 프로세스 재설계, 업무 자동화 경험을 Problem → Analysis → Solution → Impact 구조로 정리했습니다.</span>
-          </div>
-          <a class="btn" href="https://kimyn6727.github.io/portfolio/portfolio.html" target="_blank" rel="noopener noreferrer">Portfolio 보기 (Case Study) →</a>
-        </section>
+        <div class="cred">
+          <h3>Education</h3>
+          <p><strong>삼육대학교 · 학사</strong></p>
+          <p>동물생명자원학과 / 식품영양학과 복수전공</p>
+          <p class="meta">2015.03 — 2019.08 · 졸업</p>
+        </div>
       </div>
-    </article>
-  </main>
+    </aside>
+  </section>
+
+  <section class="portfolio">
+    <div>
+      <p class="portfolio-label">Selected Case Studies</p>
+      <h2>문제 정의부터 실행 결과까지, 실제 사례로 보여드리겠습니다.</h2>
+      <p>품질기준 개선, 운영 프로세스 재설계, 업무 자동화 경험을 Problem → Analysis → Solution → Impact 구조로 정리했습니다.</p>
+    </div>
+    <a href="https://kimyn6727.github.io/portfolio/portfolio.html" target="_blank" rel="noopener">Portfolio 보기<br>(Case Study) →</a>
+  </section>
+
+</main>
 </body>
 </html>
